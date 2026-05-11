@@ -1047,6 +1047,24 @@
     background: var(--teal);
   }
 
+
+  a.research-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 24px;
+    align-items: center;
+    padding: 22px 28px;
+    border-bottom: 1px solid var(--border-light);
+    background: var(--white);
+    transition: background 0.15s;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+  a.research-item:last-child { border-bottom: none; }
+  a.research-item:hover { background: #fafafa; }
+  a.research-item:hover .research-arrow { stroke: var(--teal); }
+
   /* ── VALUATION MODELS ── */
   .valuation-section { margin-top: 8px; }
   .valuation-card {
@@ -1494,7 +1512,7 @@
 <!-- ═══════════════════════════ NAV ═══════════════════════════ -->
 <nav id="main-nav">
   <a href="#" class="nav-logo" onclick="showPage('home')">
-    <img src="data:image/png;base64,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" alt="Avalon Investments" class="nav-logo-img"><span class="nav-logo-text">Avalon<br>Investments</span>
+    <img src="https://jimit2404.github.io/avalon_logo_transparent.png" alt="Avalon Investments" class="nav-logo-img"><span class="nav-logo-text">Avalon<br>Investments</span>
   </a>
   <ul class="nav-links">
     <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
@@ -1669,21 +1687,21 @@
         <a href="#" class="research-link" onclick="showPage('research'); return false;">View all research →</a>
       </div>
       <div class="research-list">
-        <div class="research-item">
+        <a href="https://jimit2404.github.io/Transrail_Initiation_coverage.pdf" target="_blank" class="research-item">
           <span class="research-sector-tag">Power & T&D</span>
-          <div class="research-item-title">Transrail Lighting Ltd. — Initiating Coverage<span>EPC · BUY · TP ₹818 · 64% upside · Blended EV/EBITDA + P/E valuation · 9th March 2026</span></div>
+          <div class="research-item-title">Transrail Lighting Ltd. — Initiating Coverage<span>EPC · BUY · TP ₹818 · 64% upside · Blended EV/EBITDA + P/E valuation · 9th March 2026</span></a>
           <span class="research-type">Initiation</span>
           <svg class="research-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
-        <div class="research-item">
+        <a href="https://jimit2404.github.io/Precision_Engineering_Slide_Deck.pdf" target="_blank" class="research-item">
           <span class="research-sector-tag">Defence</span>
-          <div class="research-item-title">India Precision Engineering — Sector Initiation<span>$165Bn global TAM · Value chain mapping · 3 portfolio buckets · March 2026</span></div>
+          <div class="research-item-title">India Precision Engineering — Sector Initiation<span>$165Bn global TAM · Value chain mapping · 3 portfolio buckets · March 2026</span></a>
           <span class="research-type">Sector</span>
           <svg class="research-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
-        <div class="research-item">
+        <a href="https://jimit2404.github.io/Avalon_Market_Outlook_March2026_Final.pdf" target="_blank" class="research-item">
           <span class="research-sector-tag">Macro</span>
-          <div class="research-item-title">The Indian Outlook — Market Outlook March 2026<span>Geopolitical disruption · Valuation reset · 5 sector calls · March 2026</span></div>
+          <div class="research-item-title">The Indian Outlook — Market Outlook March 2026<span>Geopolitical disruption · Valuation reset · 5 sector calls · March 2026</span></a>
           <span class="research-type">Outlook</span>
           <svg class="research-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
@@ -1815,27 +1833,27 @@
         <button class="filter-btn">Valuation Models</button>
       </div>
       <div class="research-full-list">
-        <div class="research-item">
+        <a href="https://jimit2404.github.io/Transrail_Initiation_coverage.pdf" target="_blank" class="research-item">
           <span class="research-sector-tag">Power & T&D</span>
           <div class="research-item-title">Transrail Lighting Ltd. — Initiating Coverage
             <span>EPC · BUY · TP ₹818 · 64% upside · Blended EV/EBITDA (60%) + P/E (40%) · Order book ₹18,216 Cr · 3Y Rev CAGR 32% · 9th March 2026</span>
-          </div>
+          </a>
           <span class="research-type">Initiation</span>
           <svg class="research-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
-        <div class="research-item">
+        <a href="https://jimit2404.github.io/Precision_Engineering_Slide_Deck.pdf" target="_blank" class="research-item">
           <span class="research-sector-tag">Defence</span>
           <div class="research-item-title">India Precision Engineering — Sector Initiation Report
             <span>$165Bn global TAM · 9.5% India CAGR · Value chain layer-by-layer · Six structural moats · Three portfolio buckets · March 2026</span>
-          </div>
+          </a>
           <span class="research-type">Sector</span>
           <svg class="research-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
-        <div class="research-item">
+        <a href="https://jimit2404.github.io/Avalon_Market_Outlook_March2026_Final.pdf" target="_blank" class="research-item">
           <span class="research-sector-tag">Macro</span>
           <div class="research-item-title">The Indian Outlook — India's Markets During Geopolitical Disruption
             <span>Nifty at 19.56x normalized P/E · Valuation reset analysis · Five sector calls · Morgan Stanley bear case rebuttal · March 2026</span>
-          </div>
+          </a>
           <span class="research-type">Outlook</span>
           <svg class="research-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
@@ -1849,7 +1867,7 @@
         </div>
         <h2 class="section-headline" style="margin-bottom:8px; font-size:28px;">DCF &amp; Financial <em>Models.</em></h2>
         <p style="font-size:13.5px; font-weight:300; color:var(--text-light); margin-bottom:28px; line-height:1.6;">Proprietary valuation models built from primary filings, concall transcripts, and peer benchmarking. Bear / Base / Bull scenarios with full WACC derivation and sensitivity tables.</p>
-        <div class="valuation-card">
+        <a href="https://jimit2404.github.io/Rajesh_Power_DCF.xlsx" target="_blank" class="valuation-card" style="display:block; text-decoration:none; color:inherit;">
           <div class="valuation-card-header">
             <div>
               <div class="valuation-card-tag">Power & T&D · EPC</div>
@@ -1906,7 +1924,7 @@
             </div>
           </div>
           <div class="valuation-note">
-            Full DCF model with FCFF waterfall, WACC derivation (Damodaran ERP), Bear/Base/Bull revenue scenarios, BESS equity capex modeling (₹121.55 Cr net of VGF), peer working capital benchmarking vs KEC / Skipper / Techno Electric, and WACC × TGR sensitivity table (6×6 grid, WACC 12–17%, TGR 2–6%).
+            ↓ Click to download · Full DCF model with FCFF waterfall, WACC derivation (Damodaran ERP), Bear/Base/Bull revenue scenarios, BESS equity capex modeling (₹121.55 Cr net of VGF), peer working capital benchmarking vs KEC / Skipper / Techno Electric, and WACC × TGR sensitivity table (6×6 grid, WACC 12–17%, TGR 2–6%).
           </div>
         </div>
       </div>
