@@ -870,13 +870,34 @@
 
  /* ── FOOTER ── */
  footer {
- background: var(--off-black);
+ background: #111b1c;
  padding: 56px 48px 32px;
  border-top: 1px solid rgba(13,92,99,0.2);
+ position: relative;
+ overflow: hidden;
+ }
+ footer::before {
+ content: '';
+ position: absolute;
+ top: -20%; right: -10%;
+ width: 65%; height: 130%;
+ background: radial-gradient(ellipse at 65% 45%, rgba(13,92,99,0.22) 0%, rgba(13,92,99,0.08) 50%, transparent 72%);
+ pointer-events: none;
+ }
+ footer::after {
+ content: '';
+ position: absolute;
+ inset: 0;
+ background-image: linear-gradient(rgba(13,92,99,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(13,92,99,0.04) 1px, transparent 1px);
+ background-size: 60px 60px;
+ mask-image: radial-gradient(ellipse at 70% 40%, black 20%, transparent 70%);
+ pointer-events: none;
  }
  .footer-inner {
  max-width: 1240px;
  margin: 0 auto;
+ position: relative;
+ z-index: 1;
  }
  .footer-top {
  display: flex;
