@@ -30,6 +30,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add index.html research.html about.html contact.html
-          git diff --cached --quiet || git commit -m "Auto-build: split source.html into pages"
+          git add index.html research/ about/ contact/
+          git diff --cached --quiet || git commit -m "Auto-build: clean URL structure from source.html"
           git push
