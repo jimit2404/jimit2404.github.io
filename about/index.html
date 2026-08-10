@@ -1519,8 +1519,8 @@
  .research-header { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 28px; }
  .research-item { grid-template-columns: auto 1fr; gap: 12px; padding: 16px 16px; flex-wrap: wrap; }
  .research-type { display: none; }
- /* OLD research-sector-tag - replaced below */ font-size: 9px; padding: 2px 7px; }
- font-size: 13px; }
+ .research-sector-tag { font-size: 9px; padding: 2px 7px; }
+ .research-item-title { font-size: 13px; }
  .research-item-title span { font-size: 11px; }
 
  /* ABOUT STRIP */
@@ -1584,6 +1584,546 @@
  .about-stat-grid { grid-template-columns: 1fr 1fr; }
  .valuation-metrics { grid-template-columns: 1fr 1fr; }
  }
+
+ /* ═══════════════════════════════════════════════════
+    APPLE DESIGN ENHANCEMENTS
+    Spring transitions, press feedback, materials, typography
+    ═══════════════════════════════════════════════════ */
+
+ /* Smooth scroll — platform-native feel */
+ html { scroll-behavior: smooth; }
+
+ /* Spring-approximating easing — cubic-bezier that mimics critically damped spring */
+ :root {
+   --spring: cubic-bezier(0.26, 1.0, 0.48, 1);      /* Apple-optimal: slight settle, no lag */
+   --spring-smooth: cubic-bezier(0.25, 1.0, 0.5, 1);  /* critically damped, Apple §4 */
+   --spring-duration: 0.4s;
+ }
+
+ /* ── BUTTONS — respond on pointer-down, not release ── */
+ .btn-primary {
+   transition: background 0.4s var(--spring-smooth),
+               transform 0.4s var(--spring),
+               box-shadow 0.4s var(--spring-smooth) !important;
+   will-change: transform;
+ }
+ .btn-primary:hover {
+   transform: translateY(-2px) !important;
+   box-shadow: 0 8px 28px rgba(13,92,99,0.22) !important;
+ }
+ .btn-primary:active {
+   transform: scale(0.97) translateY(0) !important;
+   transition-duration: 0.1s !important;
+   box-shadow: none !important;
+ }
+
+ .btn-ghost {
+   transition: background var(--spring-duration) var(--spring-smooth),
+               border-color var(--spring-duration) var(--spring-smooth),
+               transform var(--spring-duration) var(--spring),
+               color var(--spring-duration) var(--spring-smooth) !important;
+   will-change: transform;
+ }
+ .btn-ghost:hover { transform: translateY(-2px) !important; }
+ .btn-ghost:active {
+   transform: scale(0.97) !important;
+   transition-duration: 0.1s !important;
+ }
+
+ .nav-cta {
+   transition: background 0.4s var(--spring-smooth),
+               border-color 0.4s var(--spring-smooth),
+               transform 0.4s var(--spring) !important;
+   will-change: transform;
+ }
+ .nav-cta:hover { transform: translateY(-1px) !important; }
+ .nav-cta:active {
+   transform: scale(0.96) !important;
+   transition-duration: 0.1s !important;
+ }
+
+ /* ── NAV — enhanced translucent material ── */
+ nav.scrolled {
+   background: rgba(10,14,14,0.82) !important;
+   backdrop-filter: blur(24px) saturate(180%) !important;
+   -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+ }
+
+ /* ── NAV LINKS — spring-like colour transition ── */
+ .nav-links a {
+   transition: color var(--spring-duration) var(--spring-smooth),
+               opacity var(--spring-duration) var(--spring-smooth) !important;
+   position: relative;
+ }
+
+ /* ── COVERAGE CARDS — spring lift on hover ── */
+ .coverage-card {
+   transition: background 0.4s var(--spring-smooth),
+               transform 0.4s var(--spring),
+               box-shadow 0.4s var(--spring-smooth) !important;
+   will-change: transform;
+ }
+ .coverage-card:hover {
+   background: #f0f7f8 !important;
+   transform: translateY(-2px) !important;
+   box-shadow: 0 6px 20px rgba(13,92,99,0.06) !important;
+ }
+ .coverage-card:active { transform: scale(0.99) !important; transition-duration: 0.12s !important; }
+
+ /* ── RESEARCH ITEMS — spring feedback ── */
+ .research-item {
+   transition: background 0.35s var(--spring-smooth),
+               transform 0.4s var(--spring) !important;
+   will-change: transform;
+ }
+ .research-item:hover {
+   background: #f5fafa !important;
+   transform: translateX(3px) !important;
+ }
+ .research-item:active { transform: scale(0.995) translateX(0) !important; transition-duration: 0.1s !important; }
+
+ /* Research arrow — spring movement */
+ .research-arrow {
+   transition: transform 0.4s var(--spring),
+               stroke 0.35s var(--spring-smooth) !important;
+   flex-shrink: 0;
+ }
+ .research-item:hover .research-arrow {
+   transform: translateX(4px) !important;
+   stroke: var(--teal) !important;
+ }
+
+ /* ── VALUATION CARDS — subtle spring on hover ── */
+ .valuation-card {
+   transition: box-shadow 0.4s var(--spring-smooth),
+               transform 0.4s var(--spring) !important;
+   will-change: transform;
+ }
+ .valuation-card:hover {
+   box-shadow: 0 4px 24px rgba(0,0,0,0.07) !important;
+   transform: translateY(-1px) !important;
+ }
+
+ /* ── OPEN REPORT / MODEL LINKS — spring arrow ── */
+ a[style*="color:var(--teal)"] svg {
+   transition: transform var(--spring-duration) var(--spring) !important;
+ }
+ a[style*="color:var(--teal)"]:hover svg {
+   transform: translateX(4px) !important;
+ }
+
+ /* ── TYPOGRAPHY REFINEMENTS ── */
+ /* Large headings: tighter tracking as per Apple typography guidelines */
+ .hero-headline {
+   letter-spacing: -0.025em !important;
+   font-optical-sizing: auto;
+ }
+ .section-headline {
+   letter-spacing: -0.02em !important;
+   line-height: 1.08 !important;
+   font-optical-sizing: auto;
+ }
+ /* Body copy: comfortable leading */
+ .hero-sub, .section-sub {
+   line-height: 1.72 !important;
+   letter-spacing: 0.002em !important;
+ }
+ /* Small labels: slightly positive tracking for legibility */
+ .val-metric-label, .research-sector-tag, .section-eyebrow span,
+ .valuation-card-tag, .footer-col-title, .hero-cred-label {
+   letter-spacing: 0.11em !important;
+ }
+
+ /* ── PAGE HERO TITLES ── */
+ .page-hero-title {
+   letter-spacing: -0.02em !important;
+   line-height: 1.1 !important;
+ }
+
+ /* ── SMOOTH FOCUS RINGS — accessibility + Apple style ── */
+ :focus-visible {
+   outline: 2px solid rgba(13,92,99,0.6);
+   outline-offset: 3px;
+   border-radius: 4px;
+ }
+
+ /* ── REDUCED MOTION — fade instead of spring/slide ── */
+ @media (prefers-reduced-motion: reduce) {
+   *, *::before, *::after {
+     transition-duration: 0.01ms !important;
+     animation-duration: 0.01ms !important;
+   }
+   html { scroll-behavior: auto; }
+   .hero-headline, .hero-sub, .hero-actions, .hero-creds {
+     animation: none !important;
+     opacity: 1 !important;
+   }
+ }
+
+ /* ── REDUCED TRANSPARENCY — solid surfaces ── */
+ @media (prefers-reduced-transparency: reduce) {
+   nav.scrolled {
+     background: rgba(10,14,14,0.97) !important;
+     backdrop-filter: none !important;
+   }
+ }
+
+
+ /* ── SCROLL ENTRANCE ANIMATIONS ── */
+ .reveal {
+   opacity: 0;
+   transform: translateY(16px);
+   transition: opacity 0.5s var(--spring-smooth), transform 0.5s var(--spring);
+ }
+ .reveal.visible {
+   opacity: 1;
+   transform: translateY(0);
+ }
+ /* Stagger children inside a reveal-group */
+ .reveal-group > * {
+   opacity: 0;
+   transform: translateY(14px);
+   transition: opacity 0.45s var(--spring-smooth), transform 0.5s var(--spring);
+ }
+ .reveal-group.visible > *:nth-child(1) { opacity:1; transform:none; transition-delay: 0s; }
+ .reveal-group.visible > *:nth-child(2) { opacity:1; transform:none; transition-delay: 0.07s; }
+ .reveal-group.visible > *:nth-child(3) { opacity:1; transform:none; transition-delay: 0.14s; }
+ .reveal-group.visible > *:nth-child(4) { opacity:1; transform:none; transition-delay: 0.21s; }
+ .reveal-group.visible > *:nth-child(5) { opacity:1; transform:none; transition-delay: 0.28s; }
+ .reveal-group.visible > *:nth-child(6) { opacity:1; transform:none; transition-delay: 0.35s; }
+ @media (prefers-reduced-motion: reduce) {
+   .reveal, .reveal-group > * { opacity:1 !important; transform:none !important; transition:none !important; }
+ }
+
+ /* ── NAV ACTIVE INDICATOR ── */
+ .nav-links a { position: relative; }
+ .nav-links a::after {
+   content: '';
+   position: absolute;
+   bottom: -4px;
+   left: 0; right: 0;
+   height: 1.5px;
+   background: var(--teal);
+   transform: scaleX(0);
+   transform-origin: center;
+   transition: transform 0.5s var(--spring);
+ }
+ .nav-links a.active::after,
+ .nav-links a[aria-current="page"]::after { transform: scaleX(1); }
+
+ /* ── PAGE TRANSITION ── */
+ @keyframes pageFadeIn {
+   from { opacity: 0; transform: translateY(6px); }
+   to   { opacity: 1; transform: translateY(0); }
+ }
+ main {
+   animation: pageFadeIn 0.35s var(--spring-smooth) both;
+ }
+ @media (prefers-reduced-motion: reduce) {
+   main { animation: none; }
+ }
+
+ /* ── CTA PULSE ── */
+ @keyframes ctaPulse {
+   0%, 100% { box-shadow: 0 0 0 0 rgba(13,92,99,0); }
+   50%       { box-shadow: 0 0 0 8px rgba(13,92,99,0.15); }
+ }
+ .btn-primary {
+   animation: ctaPulse 3s ease-in-out 2s infinite;
+ }
+ .btn-primary:hover, .btn-primary:active {
+   animation: none !important;
+ }
+ @media (prefers-reduced-motion: reduce) {
+   .btn-primary { animation: none; }
+ }
+
+ /* ── CHART PATH DRAW ANIMATION ── */
+ .chart-line-path {
+   stroke-dasharray: 900;
+   stroke-dashoffset: 900;
+   animation: drawChart 1.2s var(--spring-smooth) 0.5s forwards;
+ }
+ .chart-area-path {
+   opacity: 0;
+   animation: fadeInArea 0.6s ease 2s forwards;
+ }
+ @keyframes drawChart {
+   to { stroke-dashoffset: 0; }
+ }
+ @keyframes fadeInArea {
+   to { opacity: 1; }
+ }
+ @media (prefers-reduced-motion: reduce) {
+   .chart-line-path { animation: none; stroke-dashoffset: 0; }
+   .chart-area-path { animation: none; opacity: 1; }
+ }
+
+
+ /* ═══════════════════════════════════════════════════
+    APPLE DESIGN — REMAINING PRINCIPLES
+    ═══════════════════════════════════════════════════ */
+
+ /* 1. TOUCH-ACTION — improve mobile gesture recognition */
+ /* Buttons/links: prevent scroll-conflict on tap */
+ .btn-primary, .btn-ghost, .nav-cta, .research-item,
+ .coverage-card, .valuation-card, .cf-submit {
+   touch-action: manipulation; /* removes 300ms delay, allows tap without zoom-conflict */
+ }
+
+ /* 2. OVERSCROLL / RUBBER-BAND — soft scroll boundary */
+ html, body {
+   overscroll-behavior: none; /* prevents browser pull-to-refresh jank on mobile */
+ }
+ /* Sections that scroll internally get contained rubber-band */
+ .research-full-list, .research-list {
+   overscroll-behavior: contain;
+ }
+
+ /* 3. MOTION BLUR on fast-moving elements */
+ /* Cards lifting on hover: subtle blur encodes speed */
+ .coverage-card:hover,
+ .research-item:hover {
+   filter: blur(0px); /* base — transitions from this */
+ }
+ @keyframes liftBlur {
+   0%   { filter: blur(0.3px); }
+   100% { filter: blur(0px); }
+ }
+ .coverage-card:hover {
+   animation: liftBlur 0.25s var(--spring-smooth) forwards;
+ }
+
+ /* 4. VIBRANCY — legible text over translucent/blur surfaces */
+ /* Nav links over blurred nav — slightly heavier weight + contrast */
+ nav.scrolled .nav-links a {
+   color: rgba(255,255,255,0.82);
+   font-weight: 450;
+   letter-spacing: 0.05em;
+ }
+ nav.scrolled .nav-links a.active,
+ nav.scrolled .nav-links a:hover {
+   color: rgba(255,255,255,1);
+   font-weight: 500;
+ }
+ /* Vibrancy on hero sub-text (over dark blurred bg) */
+ .hero-sub {
+   text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+   font-weight: 320;
+ }
+ /* Footer text over teal-tinted translucent bg */
+ footer .footer-tagline {
+   font-weight: 350;
+   letter-spacing: 0.01em;
+ }
+
+ /* 5. MATERIALIZE — blur surfaces arrive as real materials, not plain fades */
+ /* Page hero dark band: scale + blur in together */
+ .page-hero {
+   animation: materializeHero 0.4s var(--spring-smooth) both;
+ }
+ @keyframes materializeHero {
+   from {
+     opacity: 0;
+     backdrop-filter: blur(0px);
+     transform: scale(0.995);
+   }
+   to {
+     opacity: 1;
+     backdrop-filter: blur(0px);
+     transform: scale(1);
+   }
+ }
+
+ /* ── EXTRAS from deeper skill read ── */
+
+ /* Spatial consistency: research arrow origin anchored to right edge */
+ .research-arrow {
+   transform-origin: right center;
+ }
+
+ /* Hit area padding on small interactive targets (§10 — ~10px hysteresis) */
+ .nav-links a {
+   padding: 6px 4px;
+ }
+ .research-arrow {
+   padding: 8px;
+   margin: -8px;
+   box-sizing: content-box;
+ }
+
+ /* Scroll edge effect — gradient mask where content meets sticky nav */
+ /* Fade top of main content so it reads as sliding under the nav material */
+ .hero::before {
+   content: '';
+   position: absolute;
+   top: 0; left: 0; right: 0;
+   height: 80px;
+   background: linear-gradient(to bottom, rgba(15,17,18,0.4), transparent);
+   pointer-events: none;
+   z-index: 1;
+ }
+
+ /* Dim cards slightly while page-transition is in progress */
+ body.transitioning .valuation-card,
+ body.transitioning .research-item {
+   opacity: 0.7;
+   transition: opacity 0.18s ease;
+ }
+
+ /* cf-submit button: active press feedback (pointer-down) */
+ .cf-submit:active {
+   transform: scale(0.98) !important;
+   transition-duration: 0.08s !important;
+ }
+
+ @media (prefers-reduced-motion: reduce) {
+   .page-hero { animation: none; }
+   .coverage-card:hover { animation: none; filter: none; }
+   nav.scrolled .nav-links a { transition: none; }
+ }
+
+
+ /* ══════════════════════════════════════
+    MOBILE HAMBURGER MENU
+    ══════════════════════════════════════ */
+ .nav-hamburger {
+   display: none;
+   flex-direction: column;
+   gap: 5px;
+   cursor: pointer;
+   padding: 8px;
+   margin: -8px;
+   background: none;
+   border: none;
+   touch-action: manipulation;
+ }
+ .nav-hamburger span {
+   display: block;
+   width: 22px;
+   height: 1.5px;
+   background: rgba(255,255,255,0.85);
+   border-radius: 2px;
+   transition: transform 0.3s var(--spring), opacity 0.2s ease, width 0.3s var(--spring);
+   transform-origin: center;
+ }
+ .nav-hamburger.open span:nth-child(1) {
+   transform: translateY(6.5px) rotate(45deg);
+ }
+ .nav-hamburger.open span:nth-child(2) {
+   opacity: 0;
+   width: 0;
+ }
+ .nav-hamburger.open span:nth-child(3) {
+   transform: translateY(-6.5px) rotate(-45deg);
+ }
+
+ /* Mobile nav drawer */
+ .nav-drawer {
+   display: none;
+   position: fixed;
+   top: 56px;
+   left: 0; right: 0;
+   background: rgba(10,14,14,0.97);
+   backdrop-filter: blur(24px) saturate(180%);
+   -webkit-backdrop-filter: blur(24px) saturate(180%);
+   border-bottom: 1px solid rgba(13,92,99,0.2);
+   padding: 0;
+   z-index: 99;
+   transform: translateY(-8px);
+   opacity: 0;
+   pointer-events: none;
+   transition: transform 0.3s var(--spring), opacity 0.25s var(--spring-smooth);
+ }
+ .nav-drawer.open {
+   transform: translateY(0);
+   opacity: 1;
+   pointer-events: auto;
+ }
+ .nav-drawer ul {
+   list-style: none;
+   padding: 8px 0 16px;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+ }
+ .nav-drawer ul a {
+   display: block;
+   padding: 14px 24px;
+   font-size: 16px;
+   font-weight: 400;
+   color: rgba(255,255,255,0.85);
+   text-decoration: none;
+   letter-spacing: 0.02em;
+   transition: color 0.2s ease, background 0.2s ease;
+   border-bottom: 1px solid rgba(255,255,255,0.05);
+ }
+ .nav-drawer ul a:last-child { border-bottom: none; }
+ .nav-drawer ul a:active { background: rgba(13,92,99,0.15); color: white; }
+ .nav-drawer ul a.active { color: var(--teal); }
+
+ @media (max-width: 768px) {
+   .nav-hamburger { display: flex; }
+   .nav-drawer { display: block; }
+ }
+ @media (prefers-reduced-motion: reduce) {
+   .nav-drawer { transition: none; }
+   .nav-hamburger span { transition: none; }
+ }
+
+ /* ══════════════════════════════════════
+    MOBILE OPTIMISATIONS
+    ══════════════════════════════════════ */
+
+ /* Valuation assumptions: 1-col on small screens */
+ @media (max-width: 480px) {
+   .valuation-assumptions { grid-template-columns: 1fr; }
+   .val-assumption { flex-direction: column; align-items: flex-start; gap: 4px; }
+   .val-assumption-value { font-weight: 500; color: var(--text-dark); }
+   .valuation-metrics { grid-template-columns: 1fr 1fr; }
+   .valuation-card-header { padding: 16px 16px 14px; }
+   .section-eyebrow { margin-bottom: 10px; }
+   .coverage-card { padding: 20px 16px; }
+   .about-stat-grid { grid-template-columns: 1fr 1fr; gap: 0; }
+   .about-stat { min-height: 80px; padding: 16px 14px; }
+   .about-stat-num { font-size: 18px; }
+   .research-item { padding: 14px 14px; }
+   .page-hero { padding: 88px 16px 40px; }
+   .research-page-body, .about-page-body, .contact-page-body { padding: 32px 16px; }
+ }
+
+ /* Disable heavy animations on low-power/mobile */
+ @media (max-width: 768px) {
+   /* No lift animations on touch — they conflict with tap */
+   .coverage-card:hover,
+   .research-item:hover,
+   .valuation-card:hover {
+     transform: none !important;
+     box-shadow: none !important;
+   }
+   /* Keep :active press feedback — that's instant and intentional */
+   .coverage-card:active { transform: scale(0.98) !important; }
+   .research-item:active { transform: scale(0.99) !important; }
+   /* No CTA pulse on mobile — save battery */
+   .btn-primary { animation: none !important; }
+   /* No translateX on research items — not meaningful on touch */
+   .research-item:hover { transform: none !important; }
+   .research-item:hover .research-arrow { transform: none !important; }
+   /* Faster transitions on mobile */
+   :root { --spring-duration: 0.3s; }
+ }
+
+ /* Prevent text selection during fast taps */
+ .coverage-card, .research-item, .valuation-card {
+   -webkit-user-select: none;
+   user-select: none;
+ }
+ /* But allow selection on text content */
+ .about-long-bio, .valuation-note, .research-item-title {
+   -webkit-user-select: text;
+   user-select: text;
+ }
+
 </style>
 </head>
 <body>
@@ -1599,7 +2139,18 @@
  <li><a href="/contact">Contact</a></li>
  </ul>
  <a href="/contact" class="nav-cta">Get in Touch</a>
+ <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+   <span></span><span></span><span></span>
+ </button>
 </nav>
+<div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+ <ul>
+   <li><a href="/">Home</a></li>
+   <li><a href="/research">Research</a></li>
+   <li><a href="/about">About</a></li>
+   <li><a href="/contact">Contact</a></li>
+ </ul>
+</div>
 
 
 
@@ -1693,11 +2244,56 @@
  </div>
  </footer>
 <script>
+ // ── NAV SCROLL ──
  window.addEventListener('scroll', () => {
    document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 30);
  });
 
- // Contact form
+ // ── NAV ACTIVE STATE ── mark current page link
+ (function() {
+   const path = window.location.pathname.replace(/\/+$/, '') || '/';
+   document.querySelectorAll('.nav-links a').forEach(a => {
+     const href = a.getAttribute('href').replace(/\/+$/, '') || '/';
+     if (href === path || (path === '/' && href === '/')) {
+       a.classList.add('active');
+       a.setAttribute('aria-current', 'page');
+     }
+   });
+ })();
+
+ // ── SCROLL-TRIGGERED REVEAL ──
+ (function() {
+   const observer = new IntersectionObserver((entries) => {
+     entries.forEach(entry => {
+       if (entry.isIntersecting) {
+         entry.target.classList.add('visible');
+         observer.unobserve(entry.target);
+       }
+     });
+   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+   document.querySelectorAll('.reveal, .reveal-group').forEach(el => observer.observe(el));
+ })();
+
+ // ── PAGE TRANSITION — fade out on navigate ──
+ document.querySelectorAll('a[href^="/"]').forEach(a => {
+   a.addEventListener('click', function(e) {
+     const href = this.getAttribute('href');
+     if (href && !href.includes('#') && href !== window.location.pathname) {
+       e.preventDefault();
+       document.body.style.transition = 'opacity 0.18s ease';
+       document.body.style.opacity = '0';
+       setTimeout(() => { window.location.href = href; }, 180);
+     }
+   });
+ });
+
+ window.addEventListener('pageshow', () => {
+   document.body.style.transition = 'opacity 0.3s ease';
+   document.body.style.opacity = '1';
+ });
+
+ // ── CONTACT FORM ──
  async function handleFormSubmit(e) {
    const btn = e.target;
    const form = btn.closest('.contact-form');
@@ -1729,6 +2325,143 @@
      alert('Network error. Please try again.');
    }
  }
+
+ // ── VELOCITY HANDOFF UTILITY (Apple §5 & §6) ──
+ // Used for any future gesture-to-spring handoffs
+ function project(initialVelocity, decelerationRate = 0.998) {
+   return (initialVelocity / 1000) * decelerationRate / (1 - decelerationRate);
+ }
+
+ // ── POINTER-DOWN FEEDBACK — respond on press, not release ──
+ // Apply to all interactive cards immediately on pointerdown
+ document.querySelectorAll('.coverage-card, .research-item, .valuation-card').forEach(el => {
+   el.addEventListener('pointerdown', () => {
+     el.style.transform = 'scale(0.99)';
+     el.style.transition = 'transform 0.08s ease';
+   });
+   el.addEventListener('pointerup', () => {
+     el.style.transform = '';
+     el.style.transition = '';
+   });
+   el.addEventListener('pointercancel', () => {
+     el.style.transform = '';
+     el.style.transition = '';
+   });
+ });
+
+ // ── BODY TRANSITIONING CLASS ──
+ document.querySelectorAll('a[href^="/"]').forEach(a => {
+   a.addEventListener('click', function() {
+     document.body.classList.add('transitioning');
+   });
+ });
+
+
+ // ── INTERRUPTIBLE SPRING (§3 — reads live transform value) ──
+ // Pure CSS transitions snap to resting value when interrupted.
+ // This reads the live on-screen position and starts from there.
+ (function() {
+   // Spring simulation: critically damped, response ~0.35s
+   function springStep(pos, vel, target, stiffness, damping, dt) {
+     const force = -stiffness * (pos - target) - damping * vel;
+     const newVel = vel + force * dt;
+     const newPos = pos + newVel * dt;
+     return { pos: newPos, vel: newVel };
+   }
+
+   function animateSpring(el, targetY, targetX) {
+     // Cancel any running animation on this element
+     if (el._springRaf) cancelAnimationFrame(el._springRaf);
+
+     // Read live on-screen transform (current presentation value)
+     const matrix = new DOMMatrix(getComputedStyle(el).transform);
+     let pos = { x: matrix.m41 || 0, y: matrix.m42 || 0 };
+     let vel = el._springVel || { x: 0, y: 0 };
+
+     const stiffness = 180;
+     const damping = 22;
+     let last = performance.now();
+
+     function tick(now) {
+       const dt = Math.min((now - last) / 1000, 0.064); // cap dt at ~4 frames
+       last = now;
+
+       const sx = springStep(pos.x, vel.x, targetX, stiffness, damping, dt);
+       const sy = springStep(pos.y, vel.y, targetY, stiffness, damping, dt);
+       pos = { x: sx.pos, y: sy.pos };
+       vel = { x: sx.vel, y: sy.vel };
+
+       el.style.transform = `translate(${pos.x.toFixed(2)}px, ${pos.y.toFixed(2)}px)`;
+
+       // Settle check: close enough to stop
+       const settled = Math.abs(pos.x - targetX) < 0.05 && Math.abs(pos.y - targetY) < 0.05
+                     && Math.abs(vel.x) < 0.05 && Math.abs(vel.y) < 0.05;
+
+       if (settled) {
+         el.style.transform = targetX === 0 && targetY === 0 ? '' : `translate(${targetX}px, ${targetY}px)`;
+         el._springVel = { x: 0, y: 0 };
+         el._springRaf = null;
+       } else {
+         el._springVel = vel;
+         el._springRaf = requestAnimationFrame(tick);
+       }
+     }
+     el._springRaf = requestAnimationFrame(tick);
+   }
+
+   // Apply to cards — only on non-touch devices
+   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+     document.querySelectorAll('.coverage-card').forEach(el => {
+       el.addEventListener('mouseenter', () => animateSpring(el, -2, 0));
+       el.addEventListener('mouseleave', () => animateSpring(el, 0, 0));
+     });
+     document.querySelectorAll('.valuation-card').forEach(el => {
+       el.addEventListener('mouseenter', () => animateSpring(el, -1, 0));
+       el.addEventListener('mouseleave', () => animateSpring(el, 0, 0));
+     });
+     document.querySelectorAll('.research-item').forEach(el => {
+       el.addEventListener('mouseenter', () => animateSpring(el, 0, 3));
+       el.addEventListener('mouseleave', () => animateSpring(el, 0, 0));
+     });
+   }
+ })();
+
+ // ── MOBILE HAMBURGER MENU ──
+ (function() {
+   const btn = document.getElementById('nav-hamburger');
+   const drawer = document.getElementById('nav-drawer');
+   if (!btn || !drawer) return;
+
+   function toggleMenu(open) {
+     btn.classList.toggle('open', open);
+     drawer.classList.toggle('open', open);
+     btn.setAttribute('aria-expanded', open);
+     drawer.setAttribute('aria-hidden', !open);
+     document.body.style.overflow = open ? 'hidden' : '';
+   }
+
+   btn.addEventListener('click', () => toggleMenu(!btn.classList.contains('open')));
+
+   // Close on link click
+   drawer.querySelectorAll('a').forEach(a => {
+     a.addEventListener('click', () => toggleMenu(false));
+   });
+
+   // Close on outside tap
+   document.addEventListener('pointerdown', (e) => {
+     if (btn.classList.contains('open') && !drawer.contains(e.target) && !btn.contains(e.target)) {
+       toggleMenu(false);
+     }
+   });
+
+   // Mark active link in drawer too
+   const path = window.location.pathname.replace(/\/+$/, '') || '/';
+   drawer.querySelectorAll('a').forEach(a => {
+     const href = a.getAttribute('href').replace(/\/+$/, '') || '/';
+     if (href === path) a.classList.add('active');
+   });
+ })();
+
 </script>
 </body>
 </html>
