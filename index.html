@@ -43,7 +43,7 @@
  color: var(--white);
  overflow-x: hidden;
  -webkit-font-smoothing: antialiased;
- letter-spacing: -0.01em;
+ letter-spacing: 0;
  }
 
  /* ── NAV ── */
@@ -1147,15 +1147,16 @@
  /* ── VALUATION MODELS ── */
  .valuation-section { margin-top: 8px; }
  /* ══════════════════════════════════════════════════════════
-    RESEARCH CARD SYSTEM — Institutional / T2108 design language
-    Dense hairline tables, tabular nums, compact KPI tiles
+    RESEARCH CARD SYSTEM
+    Apple / SF Pro design language — minimal, editorial, precise
     ══════════════════════════════════════════════════════════ */
+
+ /* ── CARD SHELL ── */
  .valuation-card {
-   background: var(--white);
-   border: 1px solid #E5E5EA;
-   border-radius: 10px;
+   background: #fff;
+   border: 1px solid #d2d2d7;
+   border-radius: 12px;
    overflow: hidden;
-   box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
  }
 
  /* ── CARD HEADER ── */
@@ -1164,175 +1165,164 @@
    align-items: flex-start;
    justify-content: space-between;
    gap: 16px;
-   padding: 20px 22px 16px;
-   border-bottom: 1.5px solid #1D1D1F;
-   background: var(--white);
+   padding: 18px 20px 14px;
+   border-bottom: 1px solid #e5e5ea;
  }
  .valuation-card-tag {
-   font-size: 9.5px;
-   font-weight: 700;
-   letter-spacing: 0.1em;
+   font-size: 10px;
+   font-weight: 500;
+   letter-spacing: 0.06em;
    text-transform: uppercase;
-   color: #6E6E73;
+   color: #86868b;
    margin-bottom: 5px;
  }
  .valuation-card-title {
    font-family: var(--serif);
-   font-size: 19px;
-   font-weight: 600;
-   color: #1D1D1F;
-   line-height: 1.1;
+   font-size: 18px;
+   font-weight: 500;
+   color: #1d1d1f;
+   line-height: 1.15;
    margin-bottom: 3px;
    letter-spacing: -0.01em;
  }
  .valuation-card-sub {
    font-size: 11px;
    font-weight: 400;
-   color: #6E6E73;
-   letter-spacing: 0.01em;
+   color: #86868b;
+   letter-spacing: 0;
  }
  .valuation-card-rating {
    flex-shrink: 0;
-   padding: 4px 11px;
-   border-radius: 4px;
+   padding: 3px 10px;
+   border-radius: 100px;
    font-size: 10px;
-   font-weight: 700;
-   letter-spacing: 0.12em;
+   font-weight: 500;
+   letter-spacing: 0.06em;
    text-transform: uppercase;
-   margin-top: 2px;
+   margin-top: 3px;
+   white-space: nowrap;
  }
 
- /* ── KPI ROW (replaces val-metrics grid) ── */
+ /* ── METRICS STRIP ── */
+ /* Four equal columns, no tile borders — clean row of numbers */
  .valuation-metrics {
    display: grid;
    grid-template-columns: repeat(4, 1fr);
-   gap: 10px;
-   padding: 16px 22px;
-   background: #F9F9FB;
-   border-bottom: 1px solid #E5E5EA;
+   border-bottom: 1px solid #e5e5ea;
  }
  .val-metric {
-   background: var(--white);
-   border: 1px solid #E5E5EA;
-   border-radius: 8px;
-   padding: 11px 13px;
+   padding: 14px 16px 12px;
    display: flex;
    flex-direction: column;
-   gap: 3px;
+   gap: 4px;
+   border-right: 1px solid #f2f2f7;
  }
+ .val-metric:last-child { border-right: none; }
  .val-metric-label {
-   font-size: 9.5px;
-   font-weight: 700;
-   letter-spacing: 0.08em;
+   font-size: 10px;
+   font-weight: 400;
+   letter-spacing: 0.04em;
    text-transform: uppercase;
-   color: #6E6E73;
+   color: #86868b;
  }
  .val-metric-value {
-   font-size: 18px;
-   font-weight: 800;
-   color: #1D1D1F;
+   font-size: 17px;
+   font-weight: 600;
+   color: #1d1d1f;
    line-height: 1;
    font-variant-numeric: tabular-nums;
-   letter-spacing: -0.01em;
+   letter-spacing: -0.015em;
  }
  .val-metric-upside {
-   font-size: 10.5px;
-   font-weight: 600;
-   color: #1C8A4B;
+   font-size: 11px;
+   font-weight: 400;
+   color: #1d1d1f;
  }
- .val-metric-upside.neg { color: #D0342C; }
 
- /* ── DENSE HAIRLINE ASSUMPTIONS TABLE ── */
- .valuation-assumptions {
-   width: 100%;
-   border-collapse: collapse;
-   display: table;
-   border-bottom: 1px solid #E5E5EA;
- }
- /* For non-table fallback, keep grid but tighter */
+ /* ── ASSUMPTIONS TABLE ── */
+ /* Simple two-column key/value rows — no borders between cols */
  div.valuation-assumptions {
    display: grid;
    grid-template-columns: 1fr 1fr;
-   gap: 0;
-   background: #E5E5EA;
-   border-bottom: 1px solid #E5E5EA;
+   border-bottom: 1px solid #e5e5ea;
  }
  .val-assumption {
-   background: var(--white);
-   padding: 9px 22px;
+   background: #fff;
+   padding: 9px 20px;
    display: flex;
    justify-content: space-between;
    align-items: baseline;
-   border-bottom: 1px solid #F2F2F7;
-   gap: 12px;
+   border-bottom: 1px solid #f5f5f7;
+   gap: 16px;
  }
- .val-assumption:last-child { border-bottom: none; }
+ .val-assumption:nth-last-child(-n+2) { border-bottom: none; }
  .val-assumption-label {
-   font-size: 10.5px;
+   font-size: 11px;
    font-weight: 400;
-   color: #6E6E73;
-   white-space: nowrap;
+   color: #86868b;
    flex-shrink: 0;
  }
  .val-assumption-value {
    font-size: 11px;
-   font-weight: 600;
-   color: #1D1D1F;
+   font-weight: 400;
+   color: #1d1d1f;
    text-align: right;
    font-variant-numeric: tabular-nums;
  }
 
- /* ── OPEN REPORT LINK STRIP ── */
+ /* ── OPEN LINK STRIP ── */
  .card-open-link {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   padding: 11px 22px;
-   border-top: 1px solid #E5E5EA;
-   background: var(--white);
+   padding: 11px 20px;
+   border-top: 1px solid #e5e5ea;
  }
  .card-open-link a {
    display: inline-flex;
    align-items: center;
-   gap: 7px;
+   gap: 6px;
    font-size: 12px;
-   font-weight: 600;
+   font-weight: 500;
    color: var(--teal);
    text-decoration: none;
-   letter-spacing: 0.03em;
-   transition: gap 0.3s var(--spring);
+   letter-spacing: 0;
+   transition: gap 0.4s var(--spring);
  }
- .card-open-link a:hover { gap: 11px; }
+ .card-open-link a:hover { gap: 10px; }
  .card-open-link a svg {
-   width: 13px; height: 13px;
+   width: 12px; height: 12px;
    stroke: var(--teal); fill: none;
-   stroke-width: 2; stroke-linecap: round;
+   stroke-width: 1.8; stroke-linecap: round;
    transition: transform 0.4s var(--spring);
  }
  .card-open-link a:hover svg { transform: translateX(3px); }
 
  /* ── THESIS NOTE ── */
  .valuation-note {
-   padding: 12px 22px 14px;
+   padding: 12px 20px 13px;
    font-size: 11.5px;
    font-weight: 400;
-   color: #3A3A3C;
-   line-height: 1.65;
-   background: #F9F9FB;
-   border-top: 1px solid #E5E5EA;
+   color: #6e6e73;
+   line-height: 1.6;
+   background: #fbfbfd;
+   border-top: 1px solid #e5e5ea;
  }
 
- /* ── MOBILE RESPONSIVE ── */
+ /* ── UPSIDE COLOURS ── */
+ .val-metric-upside[style*="#1C8A4B"] { color: #1c8a4b !important; }
+ .val-metric-upside[style*="#D0342C"] { color: #d0342c !important; }
+
+ /* ── MOBILE ── */
  @media (max-width: 768px) {
-   .valuation-metrics { grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 12px 16px; }
-   .valuation-card-header { padding: 16px 16px 14px; }
+   .valuation-metrics { grid-template-columns: repeat(2, 1fr); }
+   .valuation-card-header { padding: 14px 16px 12px; }
    div.valuation-assumptions { grid-template-columns: 1fr; }
+   .val-assumption:nth-last-child(-n+2) { border-bottom: 1px solid #f5f5f7; }
+   .val-assumption:last-child { border-bottom: none; }
    .card-open-link { padding: 10px 16px; }
    .valuation-note { padding: 10px 16px 12px; }
  }
  @media (max-width: 480px) {
-   .valuation-metrics { grid-template-columns: repeat(2, 1fr); }
-   .val-metric-value { font-size: 16px; }
+   .val-metric-value { font-size: 15px; }
+   .val-metric { padding: 11px 12px 10px; }
  }
 
 
@@ -2320,6 +2310,124 @@
    .page-hero-tab { font-size: 11px; padding: 8px 14px; }
  }
 
+
+ /* ══════════════════════════════════════
+    APPLE TYPOGRAPHY SYSTEM
+    Matches apple.com weights, sizes, tracking
+    ══════════════════════════════════════ */
+
+ /* All text inside cards uses the light page colour, not the dark hero colour */
+ .research-page-body,
+ .about-page-body,
+ .contact-page-body {
+   color: #1d1d1f;
+   font-size: 14px;
+   line-height: 1.47;
+   font-weight: 400;
+   letter-spacing: 0;
+ }
+
+ /* Section eyebrow — like apple.com kicker lines */
+ .section-eyebrow span {
+   font-size: 11px;
+   font-weight: 500;
+   letter-spacing: 0.08em;
+   text-transform: uppercase;
+   color: #86868b;
+ }
+
+ /* Section headline — Lora 500, tight tracking only at large sizes */
+ .section-headline {
+   letter-spacing: -0.018em !important;
+   font-weight: 500 !important;
+   line-height: 1.1 !important;
+ }
+
+ /* Research item list — clean editorial rows */
+ .research-item-title {
+   font-size: 14px;
+   font-weight: 500;
+   color: #1d1d1f;
+   letter-spacing: 0;
+   line-height: 1.4;
+ }
+ .research-item-title span {
+   display: block;
+   font-size: 11.5px;
+   font-weight: 400;
+   color: #86868b;
+   margin-top: 3px;
+   letter-spacing: 0;
+ }
+ .research-sector-tag {
+   font-size: 10px;
+   font-weight: 500;
+   letter-spacing: 0.06em;
+   padding: 2px 8px;
+   border-radius: 100px;
+ }
+
+ /* Coverage card titles */
+ .coverage-title {
+   font-size: 15px;
+   font-weight: 500;
+   color: #1d1d1f;
+   letter-spacing: 0;
+ }
+ .coverage-desc {
+   font-size: 12px;
+   font-weight: 400;
+   color: #6e6e73;
+   line-height: 1.5;
+   letter-spacing: 0;
+ }
+
+ /* About stat numbers */
+ .about-stat-num {
+   font-size: 20px !important;
+   font-weight: 600 !important;
+   letter-spacing: -0.01em;
+   color: var(--teal);
+   line-height: 1.2 !important;
+ }
+ .about-stat-label {
+   font-size: 11px;
+   font-weight: 400;
+   color: #86868b;
+   letter-spacing: 0.02em;
+ }
+
+ /* Footer typography */
+ .footer-col-title {
+   font-size: 11px;
+   font-weight: 500;
+   letter-spacing: 0.06em;
+   text-transform: uppercase;
+   color: #86868b;
+ }
+ .footer-col a {
+   font-size: 13px;
+   font-weight: 400;
+   color: rgba(255,255,255,0.65);
+ }
+ .footer-col a:hover { color: rgba(255,255,255,0.9); }
+
+ /* Valuation page sub-headings under section headers */
+ .valuation-card-header p,
+ .valuation-sub {
+   font-size: 13px;
+   font-weight: 400;
+   color: #6e6e73;
+   line-height: 1.5;
+ }
+
+ /* Nav links — Inter 400, not 500 */
+ .nav-links a {
+   font-size: 13px !important;
+   font-weight: 400 !important;
+   letter-spacing: 0 !important;
+ }
+
 </style>
 </head>
 <body>
@@ -2504,7 +2612,7 @@
  </div>
  <a href="/research" class="research-link" >View all research →</a>
  </div>
- <div style="margin-bottom:20px;">
+ <div style="margin-bottom:16px;">
  <div class="section-eyebrow" style="margin-bottom:12px;">
  <div class="section-eyebrow-line"></div>
  <span>Published Research</span>
@@ -2554,11 +2662,11 @@
  <section class="about-strip">
  <div class="about-inner">
  <div class="about-left">
- <div class="section-eyebrow reveal" style="margin-bottom:20px;">
+ <div class="section-eyebrow reveal" style="margin-bottom:16px;">
  <div class="section-eyebrow-line"></div>
  <span>About</span>
  </div>
- <h2 class="section-headline" style="margin-bottom:20px;">Jimit Shah,<br><em>Founder, Avalon Investments.</em></h2>
+ <h2 class="section-headline" style="margin-bottom:16px;">Jimit Shah,<br><em>Founder, Avalon Investments.</em></h2>
  <p class="about-bio">
  <strong>Avalon Investments is an independent equity research platform</strong> built on the thesis that institutional-grade analysis of Indian mid-cap companies should not be locked behind a sell-side paywall.
  </p>
