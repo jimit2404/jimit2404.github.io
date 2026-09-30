@@ -1146,121 +1146,193 @@
 
  /* ── VALUATION MODELS ── */
  .valuation-section { margin-top: 8px; }
+ /* ══════════════════════════════════════════════════════════
+    RESEARCH CARD SYSTEM — Institutional / T2108 design language
+    Dense hairline tables, tabular nums, compact KPI tiles
+    ══════════════════════════════════════════════════════════ */
  .valuation-card {
- background: var(--white);
- border: 1px solid var(--border-light);
- border-radius: 8px;
- overflow: hidden;
+   background: var(--white);
+   border: 1px solid #E5E5EA;
+   border-radius: 10px;
+   overflow: hidden;
+   box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03);
  }
+
+ /* ── CARD HEADER ── */
  .valuation-card-header {
- display: flex;
- align-items: flex-start;
- justify-content: space-between;
- padding: 28px 28px 20px;
- border-bottom: 1px solid var(--border-light);
- background: #fafaf8;
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-between;
+   gap: 16px;
+   padding: 20px 22px 16px;
+   border-bottom: 1.5px solid #1D1D1F;
+   background: var(--white);
  }
  .valuation-card-tag {
- font-size: 10px;
- font-weight: 500;
- letter-spacing: 0.1em;
- text-transform: uppercase;
- color: var(--teal);
- margin-bottom: 8px;
+   font-size: 9.5px;
+   font-weight: 700;
+   letter-spacing: 0.1em;
+   text-transform: uppercase;
+   color: #6E6E73;
+   margin-bottom: 5px;
  }
  .valuation-card-title {
- font-family: var(--serif);
- font-size: 22px;
- font-weight: 500;
- color: var(--text-dark);
- line-height: 1.1;
- margin-bottom: 4px;
+   font-family: var(--serif);
+   font-size: 19px;
+   font-weight: 600;
+   color: #1D1D1F;
+   line-height: 1.1;
+   margin-bottom: 3px;
+   letter-spacing: -0.01em;
  }
  .valuation-card-sub {
- font-size: 12px;
- font-weight: 300;
- color: var(--text-light);
- letter-spacing: 0.02em;
+   font-size: 11px;
+   font-weight: 400;
+   color: #6E6E73;
+   letter-spacing: 0.01em;
  }
  .valuation-card-rating {
- padding: 6px 14px;
- background: rgba(13,92,99,0.08);
- border: 1px solid var(--teal);
- border-radius: 3px;
- font-size: 11px;
- font-weight: 500;
- letter-spacing: 0.1em;
- color: var(--teal);
- flex-shrink: 0;
+   flex-shrink: 0;
+   padding: 4px 11px;
+   border-radius: 4px;
+   font-size: 10px;
+   font-weight: 700;
+   letter-spacing: 0.12em;
+   text-transform: uppercase;
+   margin-top: 2px;
  }
+
+ /* ── KPI ROW (replaces val-metrics grid) ── */
  .valuation-metrics {
- display: grid;
- grid-template-columns: repeat(4, 1fr);
- gap: 1px;
- background: var(--border-light);
- border-bottom: 1px solid var(--border-light);
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 10px;
+   padding: 16px 22px;
+   background: #F9F9FB;
+   border-bottom: 1px solid #E5E5EA;
  }
  .val-metric {
- background: var(--white);
- padding: 18px 20px;
- display: flex;
- flex-direction: column;
- gap: 4px;
+   background: var(--white);
+   border: 1px solid #E5E5EA;
+   border-radius: 8px;
+   padding: 11px 13px;
+   display: flex;
+   flex-direction: column;
+   gap: 3px;
  }
- .val-metric.highlight { background: rgba(13,92,99,0.04); }
  .val-metric-label {
- font-size: 10px;
- font-weight: 500;
- letter-spacing: 0.1em;
- text-transform: uppercase;
- color: var(--text-light);
+   font-size: 9.5px;
+   font-weight: 700;
+   letter-spacing: 0.08em;
+   text-transform: uppercase;
+   color: #6E6E73;
  }
  .val-metric-value {
- font-family: var(--serif);
- font-size: 20px;
- font-weight: 500;
- color: var(--text-dark);
- line-height: 1;
+   font-size: 18px;
+   font-weight: 800;
+   color: #1D1D1F;
+   line-height: 1;
+   font-variant-numeric: tabular-nums;
+   letter-spacing: -0.01em;
  }
  .val-metric-upside {
- font-size: 11px;
- font-weight: 500;
- color: var(--teal);
+   font-size: 10.5px;
+   font-weight: 600;
+   color: #1C8A4B;
  }
+ .val-metric-upside.neg { color: #D0342C; }
+
+ /* ── DENSE HAIRLINE ASSUMPTIONS TABLE ── */
  .valuation-assumptions {
- display: grid;
- grid-template-columns: repeat(3, 1fr);
- gap: 1px;
- background: var(--border-light);
- border-bottom: 1px solid var(--border-light);
+   width: 100%;
+   border-collapse: collapse;
+   display: table;
+   border-bottom: 1px solid #E5E5EA;
+ }
+ /* For non-table fallback, keep grid but tighter */
+ div.valuation-assumptions {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 0;
+   background: #E5E5EA;
+   border-bottom: 1px solid #E5E5EA;
  }
  .val-assumption {
- background: var(--white);
- padding: 14px 20px;
- display: flex;
- justify-content: space-between;
- align-items: center;
+   background: var(--white);
+   padding: 9px 22px;
+   display: flex;
+   justify-content: space-between;
+   align-items: baseline;
+   border-bottom: 1px solid #F2F2F7;
+   gap: 12px;
  }
+ .val-assumption:last-child { border-bottom: none; }
  .val-assumption-label {
- font-size: 11px;
- font-weight: 400;
- color: var(--text-light);
- letter-spacing: 0.02em;
+   font-size: 10.5px;
+   font-weight: 400;
+   color: #6E6E73;
+   white-space: nowrap;
+   flex-shrink: 0;
  }
  .val-assumption-value {
- font-size: 12px;
- font-weight: 500;
- color: var(--text-dark);
- text-align: right;
+   font-size: 11px;
+   font-weight: 600;
+   color: #1D1D1F;
+   text-align: right;
+   font-variant-numeric: tabular-nums;
  }
+
+ /* ── OPEN REPORT LINK STRIP ── */
+ .card-open-link {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 11px 22px;
+   border-top: 1px solid #E5E5EA;
+   background: var(--white);
+ }
+ .card-open-link a {
+   display: inline-flex;
+   align-items: center;
+   gap: 7px;
+   font-size: 12px;
+   font-weight: 600;
+   color: var(--teal);
+   text-decoration: none;
+   letter-spacing: 0.03em;
+   transition: gap 0.3s var(--spring);
+ }
+ .card-open-link a:hover { gap: 11px; }
+ .card-open-link a svg {
+   width: 13px; height: 13px;
+   stroke: var(--teal); fill: none;
+   stroke-width: 2; stroke-linecap: round;
+   transition: transform 0.4s var(--spring);
+ }
+ .card-open-link a:hover svg { transform: translateX(3px); }
+
+ /* ── THESIS NOTE ── */
  .valuation-note {
- padding: 18px 28px;
- font-size: 12.5px;
- font-weight: 300;
- color: var(--text-light);
- line-height: 1.7;
- background: #fafaf8;
- border-top: 1px solid var(--border-light);
+   padding: 12px 22px 14px;
+   font-size: 11.5px;
+   font-weight: 400;
+   color: #3A3A3C;
+   line-height: 1.65;
+   background: #F9F9FB;
+   border-top: 1px solid #E5E5EA;
+ }
+
+ /* ── MOBILE RESPONSIVE ── */
+ @media (max-width: 768px) {
+   .valuation-metrics { grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 12px 16px; }
+   .valuation-card-header { padding: 16px 16px 14px; }
+   div.valuation-assumptions { grid-template-columns: 1fr; }
+   .card-open-link { padding: 10px 16px; }
+   .valuation-note { padding: 10px 16px 12px; }
+ }
+ @media (max-width: 480px) {
+   .valuation-metrics { grid-template-columns: repeat(2, 1fr); }
+   .val-metric-value { font-size: 16px; }
  }
 
 
@@ -2192,6 +2264,62 @@
  .section-type-chip.macro { background: rgba(180,100,0,0.08); color: #b46400; }
  .section-type-chip.primer { background: rgba(28,120,80,0.08); color: #1c7850; }
 
+
+ /* ── RESEARCH HERO TABS (inside dark band) ── */
+ .page-hero-tabs {
+   display: flex;
+   gap: 10px;
+   flex-wrap: wrap;
+   margin-top: 40px;
+   padding-top: 32px;
+   border-top: 1px solid rgba(255,255,255,0.1);
+ }
+ .page-hero-tab {
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+   padding: 9px 18px;
+   border: 1px solid rgba(255,255,255,0.2);
+   border-radius: 100px;
+   font-size: 12px;
+   font-weight: 500;
+   color: rgba(255,255,255,0.75);
+   text-decoration: none;
+   background: rgba(255,255,255,0.05);
+   letter-spacing: 0.04em;
+   transition: background 0.4s var(--spring-smooth),
+               border-color 0.4s var(--spring-smooth),
+               color 0.4s var(--spring-smooth),
+               transform 0.4s var(--spring);
+   will-change: transform;
+   touch-action: manipulation;
+   cursor: pointer;
+   backdrop-filter: blur(8px);
+   -webkit-backdrop-filter: blur(8px);
+ }
+ .page-hero-tab:hover {
+   background: rgba(13,92,99,0.35);
+   border-color: rgba(13,92,99,0.7);
+   color: #fff;
+   transform: translateY(-2px);
+ }
+ .page-hero-tab:active {
+   transform: scale(0.97);
+   transition-duration: 0.1s;
+ }
+ .page-hero-tab svg {
+   width: 12px; height: 12px;
+   stroke: currentColor;
+   fill: none;
+   stroke-width: 1.8;
+   stroke-linecap: round;
+   flex-shrink: 0;
+ }
+ @media (max-width: 480px) {
+   .page-hero-tabs { gap: 7px; margin-top: 28px; padding-top: 24px; }
+   .page-hero-tab { font-size: 11px; padding: 8px 14px; }
+ }
+
 </style>
 </head>
 <body>
@@ -2532,7 +2660,7 @@
 
 
  // ── RESEARCH PAGE QUICK-NAV SMOOTH SCROLL ──
- document.querySelectorAll('.research-tab').forEach(tab => {
+ document.querySelectorAll('.page-hero-tab').forEach(tab => {
    tab.addEventListener('click', function(e) {
      const href = this.getAttribute('href');
      if (href && href.startsWith('#')) {
