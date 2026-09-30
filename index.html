@@ -2428,6 +2428,178 @@
    letter-spacing: 0 !important;
  }
 
+
+ /* ══════════════════════════════════════
+    HERO STATS GRID
+    ══════════════════════════════════════ */
+ .hero-stats-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 1px;
+   background: rgba(255,255,255,0.08);
+   border: 1px solid rgba(255,255,255,0.08);
+   border-radius: 10px;
+   overflow: hidden;
+   margin-top: 32px;
+ }
+ .hero-stat {
+   background: rgba(255,255,255,0.04);
+   padding: 12px 14px;
+   display: flex;
+   flex-direction: column;
+   gap: 3px;
+ }
+ .hero-stat-num {
+   font-size: 16px;
+   font-weight: 600;
+   color: #fff;
+   letter-spacing: -0.01em;
+   line-height: 1;
+ }
+ .hero-stat-label {
+   font-size: 10px;
+   font-weight: 400;
+   color: rgba(255,255,255,0.45);
+   letter-spacing: 0.04em;
+   text-transform: uppercase;
+ }
+
+ /* ══════════════════════════════════════
+    RESEARCH SHOWCASE (hero right panel)
+    ══════════════════════════════════════ */
+ .showcase-stack {
+   position: relative;
+   width: 100%;
+   max-width: 440px;
+   margin-left: auto;
+ }
+ .showcase-card {
+   background: rgba(255,255,255,0.05);
+   border: 1px solid rgba(255,255,255,0.1);
+   border-radius: 14px;
+   padding: 20px 22px;
+   display: none;
+   flex-direction: column;
+   gap: 14px;
+   backdrop-filter: blur(12px);
+   -webkit-backdrop-filter: blur(12px);
+   animation: showcaseFadeIn 0.45s var(--spring-smooth) both;
+ }
+ .showcase-card.active { display: flex; }
+ @keyframes showcaseFadeIn {
+   from { opacity: 0; transform: translateY(6px); }
+   to   { opacity: 1; transform: translateY(0); }
+ }
+ .showcase-card-type {
+   display: flex;
+   align-items: center;
+   gap: 7px;
+   font-size: 10px;
+   font-weight: 500;
+   letter-spacing: 0.08em;
+   text-transform: uppercase;
+   color: rgba(255,255,255,0.55);
+ }
+ .showcase-type-dot {
+   width: 6px; height: 6px;
+   border-radius: 50%;
+   flex-shrink: 0;
+ }
+ .showcase-card-title {
+   font-family: var(--serif);
+   font-size: 18px;
+   font-weight: 500;
+   color: #fff;
+   letter-spacing: -0.01em;
+   line-height: 1.2;
+ }
+ .showcase-card-sub {
+   font-size: 11px;
+   font-weight: 400;
+   color: rgba(255,255,255,0.45);
+   margin-top: -8px;
+ }
+ .showcase-metrics {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 1px;
+   background: rgba(255,255,255,0.08);
+   border-radius: 8px;
+   overflow: hidden;
+ }
+ .showcase-metric {
+   background: rgba(255,255,255,0.03);
+   padding: 10px 10px 9px;
+   display: flex;
+   flex-direction: column;
+   gap: 4px;
+ }
+ .sm-label {
+   font-size: 9px;
+   font-weight: 400;
+   letter-spacing: 0.06em;
+   text-transform: uppercase;
+   color: rgba(255,255,255,0.4);
+ }
+ .sm-value {
+   font-size: 14px;
+   font-weight: 600;
+   color: #fff;
+   font-variant-numeric: tabular-nums;
+   letter-spacing: -0.01em;
+ }
+ .showcase-thesis {
+   font-size: 12px;
+   font-weight: 400;
+   color: rgba(255,255,255,0.6);
+   line-height: 1.6;
+ }
+ .showcase-link {
+   font-size: 11.5px;
+   font-weight: 500;
+   color: rgba(255,255,255,0.7);
+   text-decoration: none;
+   letter-spacing: 0.02em;
+   transition: color 0.3s ease;
+ }
+ .showcase-link:hover { color: #fff; }
+ .showcase-dots {
+   display: flex;
+   gap: 6px;
+   justify-content: center;
+   margin-top: 16px;
+ }
+ .showcase-dot {
+   width: 6px; height: 6px;
+   border-radius: 50%;
+   border: none;
+   background: rgba(255,255,255,0.25);
+   cursor: pointer;
+   padding: 0;
+   transition: background 0.3s ease, transform 0.3s var(--spring);
+   touch-action: manipulation;
+ }
+ .showcase-dot.active {
+   background: #fff;
+   transform: scale(1.3);
+ }
+
+ /* ── MOBILE ── */
+ @media (max-width: 768px) {
+   .hero-stats-grid { grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 24px; }
+   .hero-stat { padding: 10px 10px; }
+   .hero-stat-num { font-size: 13px; }
+   .showcase-stack { max-width: 100%; margin-top: 32px; }
+   .showcase-metrics { grid-template-columns: repeat(2, 1fr); }
+ }
+ @media (max-width: 480px) {
+   .hero-stats-grid { grid-template-columns: repeat(2, 1fr); }
+   .showcase-metrics { grid-template-columns: repeat(2, 1fr); }
+ }
+ @media (prefers-reduced-motion: reduce) {
+   .showcase-card { animation: none; }
+ }
+
 </style>
 </head>
 <body>
@@ -2475,72 +2647,119 @@
  Institutional-grade analysis on Indian listed companies and sectors. Mid-Cap focus. Data-anchored.
  </p>
  <div class="hero-actions">
- <a href="/research" class="btn-primary" >View Research</a>
- 
+ <a href="/research" class="btn-primary">View Research</a>
  </div>
- <div class="hero-creds">
- <div class="hero-cred">
- <span class="hero-cred-value">6</span>
- <span class="hero-cred-label">Sectors Covered</span>
- </div>
- <div class="hero-cred">
- <span class="hero-cred-value">3 Years+</span>
- <span class="hero-cred-label">Markets Experience</span>
- </div>
+ <div class="hero-stats-grid">
+ <div class="hero-stat"><span class="hero-stat-num">6</span><span class="hero-stat-label">Sectors covered</span></div>
+ <div class="hero-stat"><span class="hero-stat-num">3Y+</span><span class="hero-stat-label">Markets experience</span></div>
+ <div class="hero-stat"><span class="hero-stat-num">4 · 2</span><span class="hero-stat-label">Reports · models</span></div>
+ <div class="hero-stat"><span class="hero-stat-num">Midcap</span><span class="hero-stat-label">Market cap focus</span></div>
+ <div class="hero-stat"><span class="hero-stat-num">DCF</span><span class="hero-stat-label">Primary methodology</span></div>
+ <div class="hero-stat"><span class="hero-stat-num">Mumbai</span><span class="hero-stat-label">Based in</span></div>
  </div>
  </div>
 
- <!-- MOCK ANALYSIS PANEL -->
+ <!-- RESEARCH SHOWCASE -->
  <div class="hero-right">
- <div class="mock-panel">
- <div class="mock-panel-header">
- <span class="mock-panel-title">Research Note</span>
- <span class="mock-panel-tag">Power & T&D</span>
- </div>
- <div class="mock-panel-body">
- <div class="mock-company-row">
- <div>
- <div class="mock-company-name">Transrail Lighting</div>
- <div class="mock-company-sub">NSE: TRANSRAIL · EPC Infrastructure</div>
- </div>
- <div class="mock-rating-badge">BUY</div>
- </div>
- <div class="mock-metrics">
- <div class="mock-metric">
- <span class="mock-metric-label">CMP</span>
- <span class="mock-metric-value">₹496</span>
- </div>
- <div class="mock-metric">
- <span class="mock-metric-label">Target</span>
- <span class="mock-metric-value" style="color:#fff;">₹818</span>
- </div>
- <div class="mock-metric">
- <span class="mock-metric-label">Upside</span>
- <span class="mock-metric-value" style="color:#fff;">+65%</span>
- </div>
- </div>
- <!-- sparkline -->
- <div class="mock-chart">
- <svg viewBox="0 0 300 64" preserveAspectRatio="none">
- <defs>
- <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
- <stop offset="0%" stop-color="#0D5C63" stop-opacity="0.3"/>
- <stop offset="100%" stop-color="#0D5C63" stop-opacity="0"/>
- </linearGradient>
- </defs>
- <path class="chart-area-path" d="M0,36 L15,38 L25,56 L40,50 L55,46 L80,38 L100,30 L120,25 L140,18 L160,14 L180,10 L200,8 L220,12 L240,16 L260,18 L280,38 L300,52 L300,64 L0,64 Z" fill="url(#chartGrad)"/>
- <path class="chart-line-path" d="M0,36 L15,38 L25,56 L40,50 L55,46 L80,38 L100,30 L120,25 L140,18 L160,14 L180,10 L200,8 L220,12 L240,16 L260,18 L280,38 L300,52" fill="none" stroke="#0D5C63" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
- 
- </svg>
- </div>
- <div class="mock-thesis">
- <strong>Thesis:</strong> ₹9,680 Cr order inflows in FY25 (+121% YoY). Executable order book of ₹14,733 Cr | 2.6x annualised FY26E revenue. Integrated manufacturing (towers + conductors) captures margin competitors cede to suppliers. International business at 41% of revenue insulates from domestic PGCIL cycle risk.
- </div>
- <div class="mock-footer-row">
- <span class="mock-date" style="color:#ffffff;">March 2026</span>
- </div>
- </div>
- </div>
+ <div class="showcase-stack" id="showcase-stack">
+
+   <!-- CARD 1: Coverage Note -->
+   <div class="showcase-card active" data-index="0">
+     <div class="showcase-card-type">
+       <span class="showcase-type-dot" style="background:#1c8a4b;"></span>
+       Initiating Coverage
+     </div>
+     <div class="showcase-card-title">Transrail Lighting Ltd.</div>
+     <div class="showcase-card-sub">NSE: TRANSRAIL · T&D EPC · 9 Mar 2026</div>
+     <div class="showcase-metrics">
+       <div class="showcase-metric">
+         <span class="sm-label">Rating</span>
+         <span class="sm-value" style="color:#1c8a4b;">BUY</span>
+       </div>
+       <div class="showcase-metric">
+         <span class="sm-label">EV/EBITDA TP</span>
+         <span class="sm-value">₹818</span>
+       </div>
+       <div class="showcase-metric">
+         <span class="sm-label">Upside</span>
+         <span class="sm-value" style="color:#1c8a4b;">+65%</span>
+       </div>
+       <div class="showcase-metric">
+         <span class="sm-label">Order Book</span>
+         <span class="sm-value">₹18,216 Cr</span>
+       </div>
+     </div>
+     <div class="showcase-thesis">Integrated tower + conductor manufacturing captures margin peers cede to suppliers. International revenue at 41% insulates from PGCIL award cycle.</div>
+     <a href="https://jimit2404.github.io/Transrail_Initiation_coverage.pdf" target="_blank" rel="noopener noreferrer" class="showcase-link">Open Report →</a>
+   </div>
+
+   <!-- CARD 2: Sector Primer -->
+   <div class="showcase-card" data-index="1">
+     <div class="showcase-card-type">
+       <span class="showcase-type-dot" style="background:#5b3de0;"></span>
+       Sector Primer
+     </div>
+     <div class="showcase-card-title">The Indian Pharma Landscape</div>
+     <div class="showcase-card-sub">First-Principles · 30 Sep 2026</div>
+     <div class="showcase-metrics">
+       <div class="showcase-metric">
+         <span class="sm-label">Patent Cliff</span>
+         <span class="sm-value">$300B+</span>
+       </div>
+       <div class="showcase-metric">
+         <span class="sm-label">India US Share</span>
+         <span class="sm-value">47%</span>
+       </div>
+       <div class="showcase-metric">
+         <span class="sm-label">BIOSECURE Opp.</span>
+         <span class="sm-value">$1.4B/yr</span>
+       </div>
+       <div class="showcase-metric">
+         <span class="sm-label">US Generics</span>
+         <span class="sm-value">89% Rx</span>
+       </div>
+     </div>
+     <div class="showcase-thesis">$300B+ in branded drug patents expire by 2030. India supplies 47% of US generic prescriptions. BIOSECURE Act shifts CDMO contracts from China.</div>
+     <a href="https://jimit2404.github.io/Indian_Pharma_Landscape_First_Principles_Primer.pdf" target="_blank" rel="noopener noreferrer" class="showcase-link">Open Primer →</a>
+   </div>
+
+   <!-- CARD 3: DCF Model -->
+   <div class="showcase-card" data-index="2">
+     <div class="showcase-card-type">
+       <span class="showcase-type-dot" style="background:#0D5C63;"></span>
+       DCF Financial Model
+     </div>
+     <div class="showcase-card-title">Rajesh Power Services Ltd.</div>
+     <div class="showcase-card-sub">NSE: RPSL · T&D EPC + BESS</div>
+     <div class="showcase-metrics">
+       <div class="showcase-metric">
+         <span class="sm-label">Base TP</span>
+         <span class="sm-value">₹1,668</span>
+       </div>
+       <div class="showcase-metric">
+         <span class="sm-label">Base Upside</span>
+         <span class="sm-value" style="color:#1c8a4b;">+92%</span>
+       </div>
+       <div class="showcase-metric">
+         <span class="sm-label">Bull TP</span>
+         <span class="sm-value">₹2,315</span>
+       </div>
+       <div class="showcase-metric">
+         <span class="sm-label">Rev CAGR</span>
+         <span class="sm-value">40%</span>
+       </div>
+     </div>
+     <div class="showcase-thesis">WACC 14.86% · 7x EV/EBITDA exit · BESS optionality via 65MW GUVNL Phase VII not in base case. Bear/Base/Bull with full sensitivity table.</div>
+     <a href="https://jimit2404.github.io/Rajesh_Power_DCF.xlsx" target="_blank" rel="noopener noreferrer" class="showcase-link">Open Model →</a>
+   </div>
+
+   <!-- NAV DOTS -->
+   <div class="showcase-dots">
+     <button class="showcase-dot active" data-target="0" aria-label="Coverage note"></button>
+     <button class="showcase-dot" data-target="1" aria-label="Sector primer"></button>
+     <button class="showcase-dot" data-target="2" aria-label="DCF model"></button>
+   </div>
+
  </div>
  </div>
  </section>
@@ -2670,48 +2889,14 @@
  </div>
  </section>
 
- <!-- STATS STRIP (replaces About section) -->
- <section class="about-strip">
- <div class="about-inner" style="display:block;">
- <div class="section-eyebrow reveal" style="margin-bottom:20px;">
- <div class="section-eyebrow-line"></div>
- <span>By the numbers</span>
- </div>
- <div class="about-stat-grid reveal-group">
- <div class="about-stat">
- <div class="about-stat-num">6</div>
- <div class="about-stat-label">Sectors in active coverage</div>
- </div>
- <div class="about-stat">
- <div class="about-stat-num">3 Years+</div>
- <div class="about-stat-label">Indian capital markets experience</div>
- </div>
- <div class="about-stat">
- <div class="about-stat-num">Midcap &amp; Smallcap</div>
- <div class="about-stat-label">Market capitalisation focus</div>
- </div>
- <div class="about-stat">
- <div class="about-stat-num" style="font-size:15px;">4 reports · 2 models</div>
- <div class="about-stat-label">Coverage notes &amp; sector primers · DCF financial models</div>
- </div>
- <div class="about-stat">
- <div class="about-stat-num">DCF + Relative</div>
- <div class="about-stat-label">Valuation methodology</div>
- </div>
- <div class="about-stat">
- <div class="about-stat-num">Mumbai</div>
- <div class="about-stat-label">Based in</div>
- </div>
- </div>
- </div>
- </section>
+
 
  <!-- CTA BAND -->
  <section class="cta-band">
  <div class="cta-inner">
  <div class="cta-text">
- <h2 class="cta-headline">Research inquiries,<br>collaborations, or coverage requests.</h2>
- <p class="cta-sub">Looking to discuss a coverage idea, commission research, or explore a collaboration? Reach out directly.</p>
+ <h2 class="cta-headline">If you read research<br>rather than just consume it.</h2>
+ <p class="cta-sub">Portfolio managers, allocators, and founders of companies in coverage — if you want to discuss a thesis, push back on a call, or explore a research collaboration, reach out directly.</p>
  </div>
  <div class="cta-actions">
  <a href="/contact" class="btn-white" >Get in Touch</a>
@@ -2988,6 +3173,48 @@
      }
    });
  });
+
+
+ // ── RESEARCH SHOWCASE ROTATION ──
+ (function() {
+   const cards = document.querySelectorAll('.showcase-card');
+   const dots  = document.querySelectorAll('.showcase-dot');
+   if (!cards.length) return;
+
+   let current = 0;
+   let timer;
+
+   function show(idx) {
+     cards[current].classList.remove('active');
+     dots[current].classList.remove('active');
+     current = idx;
+     cards[current].classList.add('active');
+     dots[current].classList.add('active');
+   }
+
+   function next() { show((current + 1) % cards.length); }
+
+   function startTimer() {
+     clearInterval(timer);
+     timer = setInterval(next, 5000);
+   }
+
+   dots.forEach(dot => {
+     dot.addEventListener('click', () => {
+       show(parseInt(dot.dataset.target));
+       startTimer(); // reset timer on manual nav
+     });
+   });
+
+   // Pause on hover
+   const stack = document.getElementById('showcase-stack');
+   if (stack) {
+     stack.addEventListener('mouseenter', () => clearInterval(timer));
+     stack.addEventListener('mouseleave', startTimer);
+   }
+
+   startTimer();
+ })();
 
 </script>
 </body>
