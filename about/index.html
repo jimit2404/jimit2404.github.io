@@ -11,7 +11,9 @@
 <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEoElEQVR4nO2XS2xUVRiAv3PuzL3TmU6nA/QhVORR+uIRSYECpaWhCFEgRBJdGAhBiC40BEnUuNK4ckGMxsSFhgABn0RdIEKgQHlUHhqoFGvUYmmxCAWmr3m1c+85LqY0KnZmggtc8K/u+c+fe76c/3mEf+1GzX0UeT8PfwDwvwBwZWIkhEAMfyut71r/m90/9+4ZQADxRAKlNIYhsVyu5FprpBB43G601n+zQ5Dcc7lIh5ASQACOUhTnjcNnmvTHYnSGepiWn4fPdBOOD3Il1IPLMLAdh7KCfCy3CzREBof3pEwJkRLAMCT9kSirKh/lrfVr6brZTdnmV6ifUc47G9fTGw5T9dobdPX2MWTblI4v4NOtm5HS4GZfD5Wvvs6tSBS3YaBHcUfKIHSUxuOx+OTbs9zu72NCXj5Pzp9LQ0srQhoEcwKsq11INBoj6POxt+kc7+4/CFKSFxzLnCmTiA0OIYUY9YyUAFprskyTzu5b7D11GoAXH3+MutJivjjVBMC6uhrG5viJJRJ4s31s23eAGz0htNY8FAyCUox+fAZpqJTCZbrZdaKJhJ1gXkkJPp+Xl/d8hu3YTCooZPWc2YQjUXyWxbVQL4ebLwIwmEik+30GAFrj83j47nI7jS2XUFpTU1FG++9dHGm+iNaaTUvrsNwunGE/n2/vQAjBL39cR7oM1H8BgGQ2KK35sKERKQQr5lRSPmUyb399ECEEVWWl1JSXMhCLgRDEEzY3QiEutHfgtSy0Gh0h80ooBH7LJByNIKXBlieWceh8M62dHQgh2VS/GMdxQCkeGTeG7Q1HCUeiuI3UaZgW4E6BmZKfR0EgwJuffwnA04sWkOv38/7BBgSwcm4lFRPGg5QEPB52HG/C8npxnFQOyADAkJJ4NMZTVZXcjkb5oKGR/kiY3Gw/G+sXs+vYSW739eLzZLGmqpJphflcvtFN2/Vuskx32kqYFiChFH6flw1Laum8FaIv1MNXZ84B8PzyeiKxOB+dSKbkMzXVrKuuYv8Pl7BMd0a9ICWAISWRWJzailJKiibSF40iTJMdx07iODbTxk9gVVUl7x04TMIeorSoiLzcXH7quIrPskatfhkDCCHQjsP84qlooDAQANPN6V9/4+SPrWiteWnFcto6rnLowkWU1sycNJGsLA92isjPGIBhD+YHchDA0lnT0Y7C0ZrtR44jhKB2xnRmlRSzbd8BpBBUV5SzZHo54VgMQ6ZPsjQWySIaGxrCVoo1C+bx8NggCPimuYW2a11oBBvqFqFsm4FIGFtpnl1Si3KcTC4gDYDWIAUtV7twSUlhcAw7X3iObNMkNDDA7sZTGFKyZfVKls2sYOvOPbikZM3CBVSXlRCOx1M2IkjTjh2t8VgWRy61svtoI4Yh8bjdzJ5YRNPPbXzcdIbiwnw8psX3Vzo51NLKvKmTyfH6KArmclYlpydSBKNI9y4QgK0U0Vh85Fa83qyRISSp15imheV2MRCJAhrLsrCGp6V7vgFIhqFLSnL92SM6pRRaa1yGMaJXWqO1JujPRv9lnU4yGko1ydHsLr3WIx3wjmSafnfkvo/lDwAeAPwJUrfxd5E155YAAAAASUVORK5CYII=">
 <title>About | Avalon Investments</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
 <style>
  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -56,7 +58,7 @@
  display: flex;
  align-items: center;
  justify-content: space-between;
- transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s;
+ transition: background 0.4s, border-color 0.4s;
  border-bottom: 1px solid transparent;
  }
  nav.scrolled {
@@ -178,7 +180,7 @@
  width: 100%;
  max-width: 1240px;
  margin: 0 auto;
- padding: 120px 48px 80px;
+ padding: 120px 48px 48px;
  display: grid;
  grid-template-columns: 1fr 1fr;
  gap: 60px;
@@ -222,13 +224,14 @@
  }
  .hero-headline em {
  font-style: italic;
- color: rgba(255,255,255,0.55);
+ color: var(--white);
  }
 
  .hero-sub {
  font-size: 15px;
  font-weight: 300;
- line-height: 1.7;
+ line-height: 1.72;
+ letter-spacing: 0.002em;
  color: rgba(255,255,255,0.55);
  max-width: 420px;
  margin-bottom: 40px;
@@ -283,41 +286,36 @@
 
  .hero-creds {
  display: flex;
- flex-wrap: wrap;
- gap: 0;
- margin-top: 40px;
- padding-top: 28px;
- border-top: 1px solid rgba(255,255,255,0.08);
+ flex-wrap: nowrap;
+ gap: 32px;
+ margin-top: 36px;
+ padding-top: 24px;
+ border-top: 1px solid rgba(255,255,255,0.1);
  opacity: 0;
  animation: fadeUp 0.9s 0.8s forwards;
  }
  .hero-cred {
  display: flex;
  flex-direction: column;
- gap: 4px;
- padding-right: 28px;
- margin-right: 28px;
- border-right: 1px solid rgba(255,255,255,0.08);
- margin-bottom: 12px;
- }
- .hero-cred:last-child {
- border-right: none;
- padding-right: 0;
- margin-right: 0;
+ gap: 3px;
  }
  .hero-cred-value {
- font-family: var(--serif);
- font-size: 18px;
- font-weight: 500;
- color: var(--white);
+ font-family: var(--sans);
+ font-size: 16px;
+ font-weight: 600;
+ color: rgba(255,255,255,0.95);
  line-height: 1;
+ letter-spacing: 0;
+ white-space: nowrap;
  }
  .hero-cred-label {
- font-size: 10px;
+ font-family: var(--sans);
+ font-size: 11px;
  font-weight: 400;
- letter-spacing: 0.06em;
- color: rgba(255,255,255,0.38);
- text-transform: uppercase;
+ letter-spacing: 0;
+ color: rgba(255,255,255,0.45);
+ text-transform: none;
+ white-space: nowrap;
  }
 
  /* ── HERO MOCK PANEL ── */
@@ -516,7 +514,7 @@
  }
  .section-headline em {
  font-style: italic;
- color: var(--teal);
+ color: inherit;
  }
  .section-sub {
  font-size: 15px;
@@ -599,12 +597,12 @@
  letter-spacing: 0.04em;
  display: flex;
  align-items: center;
- gap: 6px;
- transition: gap 0.2s;
+ gap: 8px;
  white-space: nowrap;
  margin-bottom: 8px;
+ transition: opacity 0.2s ease;
  }
- .research-link:hover { gap: 10px; }
+ .research-link:hover { opacity: 0.7; }
 
  .research-list {
  display: flex;
@@ -1039,7 +1037,7 @@
  color: var(--white);
  line-height: 1.08;
  }
- .page-hero-title em { font-style: italic; color: rgba(255,255,255,0.45); }
+ .page-hero-title em { font-style: italic; color: rgba(255,255,255,0.85); }
  .page-hero-sub {
  font-size: 15px;
  font-weight: 300;
@@ -1295,9 +1293,9 @@
    color: var(--teal);
    text-decoration: none;
    letter-spacing: 0;
-   transition: gap 0.4s var(--spring);
+   transition: opacity 0.3s ease;
  }
- .card-open-link a:hover { gap: 10px; }
+ .card-open-link a:hover { opacity: 0.7; }
  .card-open-link a svg {
    width: 12px; height: 12px;
    stroke: var(--teal); fill: none;
@@ -1770,8 +1768,7 @@
  .valuation-card {
    transition: box-shadow 0.4s var(--spring-smooth),
                transform 0.4s var(--spring) !important;
-   will-change: transform;
- }
+   }
  .valuation-card:hover {
    box-shadow: 0 4px 24px rgba(0,0,0,0.07) !important;
    transform: translateY(-1px) !important;
@@ -2492,8 +2489,6 @@
    display: none;
    flex-direction: column;
    gap: 14px;
-   backdrop-filter: blur(12px);
-   -webkit-backdrop-filter: blur(12px);
    animation: showcaseFadeIn 0.45s var(--spring-smooth) both;
  }
  .showcase-card.active { display: flex; }
@@ -2609,6 +2604,36 @@
  }
  @media (prefers-reduced-motion: reduce) {
    .showcase-card { animation: none; }
+ }
+
+
+ @media (prefers-contrast: more) {
+   .valuation-card { border-color: #1d1d1f; }
+   .val-assumption-label { color: #3a3a3c; }
+   .research-sector-tag { border: 1px solid currentColor; }
+   nav { background: rgba(10,14,14,0.98) !important; }
+   .hero-cred-label { color: rgba(255,255,255,0.7); }
+ }
+
+
+ /* ── PERFORMANCE: content-visibility for off-screen sections ── */
+ .coverage, .research-preview, .cta-band,
+ #sector-reports, #dcf-models, #market-outlooks,
+ #company-coverage {
+   content-visibility: auto;
+   contain-intrinsic-size: 0 600px;
+ }
+
+ /* ── Avoid layout thrash: explicit contain on cards ── */
+ .valuation-card, .coverage-card, .research-item {
+   contain: layout style;
+ }
+
+ /* ── Font smoothing ── */
+ * {
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   text-rendering: optimizeLegibility;
  }
 
 </style>
@@ -2731,7 +2756,7 @@
  // ── NAV SCROLL ──
  window.addEventListener('scroll', () => {
    document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 30);
- });
+ }, { passive: true });
 
  // ── NAV ACTIVE STATE ── mark current page link
  (function() {
@@ -2754,7 +2779,7 @@
          observer.unobserve(entry.target);
        }
      });
-   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
    document.querySelectorAll('.reveal, .reveal-group').forEach(el => observer.observe(el));
  })();
@@ -2816,20 +2841,35 @@
    return (initialVelocity / 1000) * decelerationRate / (1 - decelerationRate);
  }
 
- // ── POINTER-DOWN FEEDBACK — respond on press, not release ──
- // Apply to all interactive cards immediately on pointerdown
+ // ── POINTER-DOWN FEEDBACK + CAPTURE (§1, §2, §10) ──
+ // setPointerCapture ensures tracking continues if pointer leaves element bounds
  document.querySelectorAll('.coverage-card, .research-item, .valuation-card').forEach(el => {
-   el.addEventListener('pointerdown', () => {
+   let velHistory = []; // velocity history for release handoff (§5)
+
+   el.addEventListener('pointerdown', (e) => {
+     el.setPointerCapture(e.pointerId); // §2 — 1:1 tracking, capture pointer
      el.style.transform = 'scale(0.99)';
      el.style.transition = 'transform 0.08s ease';
+     velHistory = [{ y: e.clientY, t: performance.now() }];
    });
-   el.addEventListener('pointerup', () => {
+
+   el.addEventListener('pointermove', (e) => {
+     if (!el.hasPointerCapture(e.pointerId)) return;
+     // track velocity history (last 4 samples) for momentum handoff (§5)
+     velHistory.push({ y: e.clientY, t: performance.now() });
+     if (velHistory.length > 4) velHistory.shift();
+   });
+
+   el.addEventListener('pointerup', (e) => {
      el.style.transform = '';
      el.style.transition = '';
+     velHistory = [];
    });
+
    el.addEventListener('pointercancel', () => {
      el.style.transform = '';
      el.style.transition = '';
+     velHistory = [];
    });
  });
 
@@ -2983,22 +3023,27 @@
 
    function startTimer() {
      clearInterval(timer);
-     timer = setInterval(next, 5000);
+     // Only run when tab is visible — pause on hidden to save resources
+     if (!document.hidden) timer = setInterval(next, 5000);
    }
 
    dots.forEach(dot => {
      dot.addEventListener('click', () => {
        show(parseInt(dot.dataset.target));
-       startTimer(); // reset timer on manual nav
+       startTimer();
      });
    });
 
-   // Pause on hover
    const stack = document.getElementById('showcase-stack');
    if (stack) {
      stack.addEventListener('mouseenter', () => clearInterval(timer));
      stack.addEventListener('mouseleave', startTimer);
    }
+
+   // Pause when tab is hidden, resume when visible (saves battery/CPU)
+   document.addEventListener('visibilitychange', () => {
+     document.hidden ? clearInterval(timer) : startTimer();
+   });
 
    startTimer();
  })();
