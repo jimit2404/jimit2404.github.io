@@ -283,9 +283,10 @@
 
  .hero-creds {
  display: flex;
- gap: 24px;
- margin-top: 52px;
- padding-top: 36px;
+ flex-wrap: wrap;
+ gap: 0;
+ margin-top: 40px;
+ padding-top: 28px;
  border-top: 1px solid rgba(255,255,255,0.08);
  opacity: 0;
  animation: fadeUp 0.9s 0.8s forwards;
@@ -294,18 +295,28 @@
  display: flex;
  flex-direction: column;
  gap: 4px;
+ padding-right: 28px;
+ margin-right: 28px;
+ border-right: 1px solid rgba(255,255,255,0.08);
+ margin-bottom: 12px;
+ }
+ .hero-cred:last-child {
+ border-right: none;
+ padding-right: 0;
+ margin-right: 0;
  }
  .hero-cred-value {
  font-family: var(--serif);
- font-size: 22px;
+ font-size: 18px;
  font-weight: 500;
  color: var(--white);
+ line-height: 1;
  }
  .hero-cred-label {
- font-size: 11px;
+ font-size: 10px;
  font-weight: 400;
  letter-spacing: 0.06em;
- color: rgba(255,255,255,0.4);
+ color: rgba(255,255,255,0.38);
  text-transform: uppercase;
  }
 
@@ -2649,13 +2660,13 @@
  <div class="hero-actions">
  <a href="/research" class="btn-primary">View Research</a>
  </div>
- <div class="hero-stats-grid">
- <div class="hero-stat"><span class="hero-stat-num">6</span><span class="hero-stat-label">Sectors covered</span></div>
- <div class="hero-stat"><span class="hero-stat-num">3Y+</span><span class="hero-stat-label">Markets experience</span></div>
- <div class="hero-stat"><span class="hero-stat-num">4 · 2</span><span class="hero-stat-label">Reports · models</span></div>
- <div class="hero-stat"><span class="hero-stat-num">Midcap</span><span class="hero-stat-label">Market cap focus</span></div>
- <div class="hero-stat"><span class="hero-stat-num">DCF</span><span class="hero-stat-label">Primary methodology</span></div>
- <div class="hero-stat"><span class="hero-stat-num">Mumbai</span><span class="hero-stat-label">Based in</span></div>
+ <div class="hero-creds">
+ <div class="hero-cred"><span class="hero-cred-value">6</span><span class="hero-cred-label">Sectors Covered</span></div>
+ <div class="hero-cred"><span class="hero-cred-value">3Y+</span><span class="hero-cred-label">Markets Experience</span></div>
+ <div class="hero-cred"><span class="hero-cred-value">4 · 2</span><span class="hero-cred-label">Reports · Models</span></div>
+ <div class="hero-cred"><span class="hero-cred-value">Midcap</span><span class="hero-cred-label">Market Cap Focus</span></div>
+ <div class="hero-cred"><span class="hero-cred-value">DCF</span><span class="hero-cred-label">Methodology</span></div>
+ <div class="hero-cred"><span class="hero-cred-value">Mumbai</span><span class="hero-cred-label">Based In</span></div>
  </div>
  </div>
 

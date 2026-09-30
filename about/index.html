@@ -283,9 +283,10 @@
 
  .hero-creds {
  display: flex;
- gap: 24px;
- margin-top: 52px;
- padding-top: 36px;
+ flex-wrap: wrap;
+ gap: 0;
+ margin-top: 40px;
+ padding-top: 28px;
  border-top: 1px solid rgba(255,255,255,0.08);
  opacity: 0;
  animation: fadeUp 0.9s 0.8s forwards;
@@ -294,18 +295,28 @@
  display: flex;
  flex-direction: column;
  gap: 4px;
+ padding-right: 28px;
+ margin-right: 28px;
+ border-right: 1px solid rgba(255,255,255,0.08);
+ margin-bottom: 12px;
+ }
+ .hero-cred:last-child {
+ border-right: none;
+ padding-right: 0;
+ margin-right: 0;
  }
  .hero-cred-value {
  font-family: var(--serif);
- font-size: 22px;
+ font-size: 18px;
  font-weight: 500;
  color: var(--white);
+ line-height: 1;
  }
  .hero-cred-label {
- font-size: 11px;
+ font-size: 10px;
  font-weight: 400;
  letter-spacing: 0.06em;
- color: rgba(255,255,255,0.4);
+ color: rgba(255,255,255,0.38);
  text-transform: uppercase;
  }
 
