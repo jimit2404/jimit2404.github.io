@@ -2124,6 +2124,74 @@
    user-select: text;
  }
 
+
+ /* ══════════════════════════════════════
+    RESEARCH PAGE QUICK-NAV TABS
+    ══════════════════════════════════════ */
+ .research-quicknav {
+   display: flex;
+   gap: 8px;
+   flex-wrap: wrap;
+   padding: 28px 0 36px;
+   border-bottom: 1px solid var(--border-light);
+   margin-bottom: 48px;
+ }
+ .research-tab {
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+   padding: 10px 20px;
+   border: 1px solid var(--border-light);
+   border-radius: 100px;
+   font-size: 12.5px;
+   font-weight: 500;
+   color: var(--text-mid);
+   text-decoration: none;
+   background: var(--white);
+   letter-spacing: 0.02em;
+   transition: background 0.4s var(--spring-smooth), border-color 0.4s var(--spring-smooth), color 0.4s var(--spring-smooth), transform 0.4s var(--spring);
+   will-change: transform;
+   touch-action: manipulation;
+   cursor: pointer;
+ }
+ .research-tab:hover {
+   background: var(--teal-light);
+   border-color: var(--teal);
+   color: var(--teal);
+   transform: translateY(-1px);
+ }
+ .research-tab:active { transform: scale(0.97); transition-duration: 0.1s; }
+ .research-tab svg {
+   width: 13px; height: 13px;
+   stroke: currentColor;
+   fill: none;
+   stroke-width: 1.8;
+   stroke-linecap: round;
+   flex-shrink: 0;
+ }
+ @media (max-width: 480px) {
+   .research-quicknav { gap: 6px; padding: 20px 0 28px; }
+   .research-tab { font-size: 11.5px; padding: 8px 14px; }
+ }
+
+ /* ── SECTION LABEL CHIPS ── distinguish company vs sector vs model */
+ .section-type-chip {
+   display: inline-flex;
+   align-items: center;
+   gap: 5px;
+   font-size: 10px;
+   font-weight: 600;
+   letter-spacing: 0.1em;
+   text-transform: uppercase;
+   padding: 3px 10px;
+   border-radius: 100px;
+   margin-bottom: 6px;
+ }
+ .section-type-chip.company { background: rgba(13,92,99,0.08); color: var(--teal); }
+ .section-type-chip.sector { background: rgba(90,60,200,0.08); color: #5a3cc8; }
+ .section-type-chip.macro { background: rgba(180,100,0,0.08); color: #b46400; }
+ .section-type-chip.primer { background: rgba(28,120,80,0.08); color: #1c7850; }
+
 </style>
 </head>
 <body>
@@ -2160,22 +2228,41 @@
  <div class="page-hero-inner">
  <div class="page-hero-eyebrow">Research</div>
  <h1 class="page-hero-title">Coverage &amp; <em>Reports.</em></h1>
- <p class="page-hero-sub">Sector deep-dives, initiating coverage notes, earnings reviews and investment theses on Indian listed equities.</p>
+ <p class="page-hero-sub">Initiating coverage notes, sector primers, macro outlook reports, and valuation models on Indian listed equities. Primary source-verified throughout.</p>
  </div>
  </div>
  <div class="research-page-body">
  <div class="section-inner">
 
- <!-- RESEARCH REPORTS SECTION HEADING -->
+ <!-- QUICK NAV TABS -->
+ <nav class="research-quicknav" aria-label="Jump to section">
+   <a href="#company-coverage" class="research-tab">
+     <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+     Company Coverage
+   </a>
+   <a href="#sector-reports" class="research-tab">
+     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+     Sector Reports
+   </a>
+   <a href="#dcf-models" class="research-tab">
+     <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+     DCF &amp; Financial Models
+   </a>
+ </nav>
+
+ <!-- ─────────────────────────────────────── -->
+ <!-- SECTION 1: COMPANY COVERAGE NOTES      -->
+ <!-- ─────────────────────────────────────── -->
+ <div id="company-coverage" style="scroll-margin-top: 80px;">
  <div class="section-eyebrow reveal" style="margin-bottom:16px;">
  <div class="section-eyebrow-line"></div>
- <span>Research Reports</span>
+ <span>Company Coverage</span>
  </div>
- <h2 class="section-headline" style="margin-bottom:8px; font-size:28px;">Coverage Notes &amp; <em>Sector Reports.</em></h2>
- <p style="font-size:13.5px; font-weight:300; color:var(--text-light); margin-bottom:36px; line-height:1.6;">Initiating coverage notes, sector deep-dives, and macro outlook reports. Primary source-verified, no unverified figures, analyst-grade methodology throughout.</p>
+ <h2 class="section-headline" style="margin-bottom:8px; font-size:28px;">Initiating Coverage <em>Notes.</em></h2>
+ <p style="font-size:13.5px; font-weight:300; color:var(--text-light); margin-bottom:32px; line-height:1.6;">Stock-specific coverage notes with price targets, valuation methodology and thesis. Primary-source verified, no unverified figures.</p>
 
  <!-- TRANSRAIL -->
- <div class="valuation-card reveal" style="margin-bottom:16px;">
+ <div class="valuation-card reveal" style="margin-bottom:24px;">
  <div class="valuation-card-header">
  <div>
  <div class="valuation-card-tag">Power & T&D · EPC · Initiating Coverage</div>
@@ -2190,26 +2277,26 @@
  <span class="val-metric-value">BUY</span>
  </div>
  <div class="val-metric">
- <span class="val-metric-label">DCF TP (Base)</span>
- <span class="val-metric-value">₹779</span>
- <span class="val-metric-upside">+57% upside</span>
- </div>
- <div class="val-metric">
  <span class="val-metric-label">EV/EBITDA TP</span>
  <span class="val-metric-value">₹818</span>
  <span class="val-metric-upside">+65% upside</span>
+ </div>
+ <div class="val-metric">
+ <span class="val-metric-label">DCF TP (Base)</span>
+ <span class="val-metric-value">₹779</span>
+ <span class="val-metric-upside">+57% upside</span>
  </div>
  <div class="val-metric">
  <span class="val-metric-label">Order Book</span>
  <span class="val-metric-value">₹18,216 Cr</span>
  <span class="val-metric-upside">2.8x revenue</span>
  </div>
- <div class="val-metric">
- <span class="val-metric-label">3Y Rev CAGR</span>
- <span class="val-metric-value">32%</span>
- </div>
  </div>
  <div class="valuation-assumptions">
+ <div class="val-assumption">
+ <span class="val-assumption-label">3Y Rev CAGR</span>
+ <span class="val-assumption-value">32%</span>
+ </div>
  <div class="val-assumption">
  <span class="val-assumption-label">Methodology</span>
  <span class="val-assumption-value">Blended EV/EBITDA (60%) + P/E (40%)</span>
@@ -2243,8 +2330,21 @@
  </div>
  </div>
 
+ </div><!-- /company-coverage -->
+
+ <!-- ─────────────────────────────────────── -->
+ <!-- SECTION 2: SECTOR REPORTS & PRIMERS    -->
+ <!-- ─────────────────────────────────────── -->
+ <div id="sector-reports" style="scroll-margin-top:80px; margin-top:64px;">
+ <div class="section-eyebrow reveal" style="margin-bottom:16px;">
+ <div class="section-eyebrow-line"></div>
+ <span>Sector Reports</span>
+ </div>
+ <h2 class="section-headline" style="margin-bottom:8px; font-size:28px;">Sector Deep-Dives <em>&amp; Primers.</em></h2>
+ <p style="font-size:13.5px; font-weight:300; color:var(--text-light); margin-bottom:32px; line-height:1.6;">First-principles sector primers and initiation reports. Value chain mapping, structural moat analysis, and investable theme identification.</p>
+
  <!-- INDIA PRECISION ENGINEERING -->
- <div class="valuation-card reveal" style="margin-bottom:16px;">
+ <div class="valuation-card reveal" style="margin-bottom:24px;">
  <div class="valuation-card-header">
  <div>
  <div class="valuation-card-tag">Defence & Aerospace · Sector Initiation</div>
@@ -2306,7 +2406,7 @@
  </div>
 
  <!-- THE INDIAN OUTLOOK -->
- <div class="valuation-card reveal" style="margin-bottom:48px;">
+ <div class="valuation-card reveal" style="margin-bottom:24px;">
  <div class="valuation-card-header">
  <div>
  <div class="valuation-card-tag">Macro · Market Outlook</div>
@@ -2369,9 +2469,80 @@
  </div>
  </div>
 
- <!-- VALUATION MODELS SECTION -->
- <div class="valuation-section" data-category="valuation">
- <div class="section-eyebrow" style="margin-bottom:16px; margin-top:64px;">
+
+ <!-- INDIAN PHARMA LANDSCAPE PRIMER -->
+ <div class="valuation-card reveal" style="margin-bottom:24px;">
+ <div class="valuation-card-header">
+   <div>
+     <div class="valuation-card-tag">Pharma &amp; CDMO · Sector Primer</div>
+     <div class="valuation-card-title">The Indian Pharma Landscape</div>
+     <div class="valuation-card-sub">A First-Principles Primer · 30 September 2026</div>
+   </div>
+   <div class="valuation-card-rating" style="background:rgba(28,120,80,0.08);color:#1c7850;font-size:11px;padding:6px 14px;">PRIMER</div>
+ </div>
+ <div class="valuation-metrics">
+   <div class="val-metric">
+     <span class="val-metric-label">Approval Rate</span>
+     <span class="val-metric-value">6.7%</span>
+     <span class="val-metric-upside">of drugs entering trials</span>
+   </div>
+   <div class="val-metric">
+     <span class="val-metric-label">Patent Window</span>
+     <span class="val-metric-value">7–14 yrs</span>
+     <span class="val-metric-upside">protected selling time</span>
+   </div>
+   <div class="val-metric">
+     <span class="val-metric-label">US Generic Share</span>
+     <span class="val-metric-value">89%</span>
+     <span class="val-metric-upside">of prescriptions</span>
+   </div>
+   <div class="val-metric">
+     <span class="val-metric-label">Patent Cliff</span>
+     <span class="val-metric-value">$300B+</span>
+     <span class="val-metric-upside">global sales at risk by 2030</span>
+   </div>
+ </div>
+ <div class="valuation-assumptions">
+   <div class="val-assumption">
+     <span class="val-assumption-label">Pages</span>
+     <span class="val-assumption-value">12</span>
+   </div>
+   <div class="val-assumption">
+     <span class="val-assumption-label">Sections</span>
+     <span class="val-assumption-value">Value chain · Patent clock · CRO/CDMO/CMO · Business models · Complexity moat · India · Patent cliff · Semaglutide · FDA risk · Investor checklist</span>
+   </div>
+   <div class="val-assumption">
+     <span class="val-assumption-label">India Supply</span>
+     <span class="val-assumption-value">47% of US generic prescriptions (IQVIA 2022)</span>
+   </div>
+   <div class="val-assumption">
+     <span class="val-assumption-label">China+1 Opportunity</span>
+     <span class="val-assumption-value">$700M–$1.4B/yr for Indian CRDMOs (Jefferies est.)</span>
+   </div>
+   <div class="val-assumption">
+     <span class="val-assumption-label">Key Theme</span>
+     <span class="val-assumption-value">Complexity as moat — from commodity generics to biologics</span>
+   </div>
+   <div class="val-assumption">
+     <span class="val-assumption-label">Published</span>
+     <span class="val-assumption-value">30 September 2026</span>
+   </div>
+ </div>
+ <div style="padding:0 28px 0; border-top:1px solid var(--border-light); background:#fafaf8;">
+   <a href="https://jimit2404.github.io/Indian_Pharma_Landscape_First_Principles_Primer.pdf" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; padding:14px 0; font-size:13px; font-weight:500; color:var(--teal); text-decoration:none; letter-spacing:0.02em;">Open Primer <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+ </div>
+ <div class="valuation-note">
+   First-principles sector primer covering the full Indian pharma value chain: from molecule to finished medicine, the patent clock and cliff, CRO/CDO/CMO/CDMO/CRDMO capability layers, business model risk and return, complexity as a moat, India's competitive position, the 2025–2030 patent cliff opportunity, semaglutide as a live case study, FDA inspection risk, and an eight-point investor checklist.
+ </div>
+ </div>
+
+ </div><!-- /sector-reports -->
+
+ <!-- ─────────────────────────────────────── -->
+ <!-- SECTION 3: DCF & FINANCIAL MODELS      -->
+ <!-- ─────────────────────────────────────── -->
+ <div id="dcf-models" style="scroll-margin-top:80px; margin-top:64px;">
+ <div class="section-eyebrow" style="margin-bottom:16px;">
  <div class="section-eyebrow-line"></div>
  <span>Valuation Models</span>
  </div>
@@ -2761,6 +2932,21 @@
      if (href === path) a.classList.add('active');
    });
  })();
+
+
+ // ── RESEARCH PAGE QUICK-NAV SMOOTH SCROLL ──
+ document.querySelectorAll('.research-tab').forEach(tab => {
+   tab.addEventListener('click', function(e) {
+     const href = this.getAttribute('href');
+     if (href && href.startsWith('#')) {
+       e.preventDefault();
+       const target = document.querySelector(href);
+       if (target) {
+         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+       }
+     }
+   });
+ });
 
 </script>
 </body>
