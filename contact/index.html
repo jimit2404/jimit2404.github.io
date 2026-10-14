@@ -11,9 +11,7 @@
 <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEoElEQVR4nO2XS2xUVRiAv3PuzL3TmU6nA/QhVORR+uIRSYECpaWhCFEgRBJdGAhBiC40BEnUuNK4ckGMxsSFhgABn0RdIEKgQHlUHhqoFGvUYmmxCAWmr3m1c+85LqY0KnZmggtc8K/u+c+fe76c/3mEf+1GzX0UeT8PfwDwvwBwZWIkhEAMfyut71r/m90/9+4ZQADxRAKlNIYhsVyu5FprpBB43G601n+zQ5Dcc7lIh5ASQACOUhTnjcNnmvTHYnSGepiWn4fPdBOOD3Il1IPLMLAdh7KCfCy3CzREBof3pEwJkRLAMCT9kSirKh/lrfVr6brZTdnmV6ifUc47G9fTGw5T9dobdPX2MWTblI4v4NOtm5HS4GZfD5Wvvs6tSBS3YaBHcUfKIHSUxuOx+OTbs9zu72NCXj5Pzp9LQ0srQhoEcwKsq11INBoj6POxt+kc7+4/CFKSFxzLnCmTiA0OIYUY9YyUAFprskyTzu5b7D11GoAXH3+MutJivjjVBMC6uhrG5viJJRJ4s31s23eAGz0htNY8FAyCUox+fAZpqJTCZbrZdaKJhJ1gXkkJPp+Xl/d8hu3YTCooZPWc2YQjUXyWxbVQL4ebLwIwmEik+30GAFrj83j47nI7jS2XUFpTU1FG++9dHGm+iNaaTUvrsNwunGE/n2/vQAjBL39cR7oM1H8BgGQ2KK35sKERKQQr5lRSPmUyb399ECEEVWWl1JSXMhCLgRDEEzY3QiEutHfgtSy0Gh0h80ooBH7LJByNIKXBlieWceh8M62dHQgh2VS/GMdxQCkeGTeG7Q1HCUeiuI3UaZgW4E6BmZKfR0EgwJuffwnA04sWkOv38/7BBgSwcm4lFRPGg5QEPB52HG/C8npxnFQOyADAkJJ4NMZTVZXcjkb5oKGR/kiY3Gw/G+sXs+vYSW739eLzZLGmqpJphflcvtFN2/Vuskx32kqYFiChFH6flw1Laum8FaIv1MNXZ84B8PzyeiKxOB+dSKbkMzXVrKuuYv8Pl7BMd0a9ICWAISWRWJzailJKiibSF40iTJMdx07iODbTxk9gVVUl7x04TMIeorSoiLzcXH7quIrPskatfhkDCCHQjsP84qlooDAQANPN6V9/4+SPrWiteWnFcto6rnLowkWU1sycNJGsLA92isjPGIBhD+YHchDA0lnT0Y7C0ZrtR44jhKB2xnRmlRSzbd8BpBBUV5SzZHo54VgMQ6ZPsjQWySIaGxrCVoo1C+bx8NggCPimuYW2a11oBBvqFqFsm4FIGFtpnl1Si3KcTC4gDYDWIAUtV7twSUlhcAw7X3iObNMkNDDA7sZTGFKyZfVKls2sYOvOPbikZM3CBVSXlRCOx1M2IkjTjh2t8VgWRy61svtoI4Yh8bjdzJ5YRNPPbXzcdIbiwnw8psX3Vzo51NLKvKmTyfH6KArmclYlpydSBKNI9y4QgK0U0Vh85Fa83qyRISSp15imheV2MRCJAhrLsrCGp6V7vgFIhqFLSnL92SM6pRRaa1yGMaJXWqO1JujPRv9lnU4yGko1ydHsLr3WIx3wjmSafnfkvo/lDwAeAPwJUrfxd5E155YAAAAASUVORK5CYII=">
 <title>Contact | Avalon Investments</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -45,7 +43,7 @@
  color: var(--white);
  overflow-x: hidden;
  -webkit-font-smoothing: antialiased;
- letter-spacing: 0;
+ letter-spacing: -0.01em;
  }
 
  /* ── NAV ── */
@@ -58,7 +56,7 @@
  display: flex;
  align-items: center;
  justify-content: space-between;
- transition: background 0.4s, border-color 0.4s;
+ transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s;
  border-bottom: 1px solid transparent;
  }
  nav.scrolled {
@@ -180,7 +178,7 @@
  width: 100%;
  max-width: 1240px;
  margin: 0 auto;
- padding: 120px 48px 48px;
+ padding: 120px 48px 80px;
  display: grid;
  grid-template-columns: 1fr 1fr;
  gap: 60px;
@@ -224,14 +222,13 @@
  }
  .hero-headline em {
  font-style: italic;
- color: var(--white);
+ color: rgba(255,255,255,0.55);
  }
 
  .hero-sub {
  font-size: 15px;
  font-weight: 300;
- line-height: 1.72;
- letter-spacing: 0.002em;
+ line-height: 1.7;
  color: rgba(255,255,255,0.55);
  max-width: 420px;
  margin-bottom: 40px;
@@ -286,36 +283,30 @@
 
  .hero-creds {
  display: flex;
- flex-wrap: nowrap;
- gap: 32px;
- margin-top: 36px;
- padding-top: 24px;
- border-top: 1px solid rgba(255,255,255,0.1);
+ gap: 24px;
+ margin-top: 52px;
+ padding-top: 36px;
+ border-top: 1px solid rgba(255,255,255,0.08);
  opacity: 0;
  animation: fadeUp 0.9s 0.8s forwards;
  }
  .hero-cred {
  display: flex;
  flex-direction: column;
- gap: 3px;
+ gap: 4px;
  }
  .hero-cred-value {
- font-family: var(--sans);
- font-size: 16px;
- font-weight: 600;
- color: rgba(255,255,255,0.95);
- line-height: 1;
- letter-spacing: 0;
- white-space: nowrap;
+ font-family: var(--serif);
+ font-size: 22px;
+ font-weight: 500;
+ color: var(--white);
  }
  .hero-cred-label {
- font-family: var(--sans);
  font-size: 11px;
  font-weight: 400;
- letter-spacing: 0;
- color: rgba(255,255,255,0.45);
- text-transform: none;
- white-space: nowrap;
+ letter-spacing: 0.06em;
+ color: rgba(255,255,255,0.4);
+ text-transform: uppercase;
  }
 
  /* ── HERO MOCK PANEL ── */
@@ -514,7 +505,7 @@
  }
  .section-headline em {
  font-style: italic;
- color: inherit;
+ color: var(--teal);
  }
  .section-sub {
  font-size: 15px;
@@ -597,12 +588,12 @@
  letter-spacing: 0.04em;
  display: flex;
  align-items: center;
- gap: 8px;
+ gap: 6px;
+ transition: gap 0.2s;
  white-space: nowrap;
  margin-bottom: 8px;
- transition: opacity 0.2s ease;
  }
- .research-link:hover { opacity: 0.7; }
+ .research-link:hover { gap: 10px; }
 
  .research-list {
  display: flex;
@@ -1037,7 +1028,7 @@
  color: var(--white);
  line-height: 1.08;
  }
- .page-hero-title em { font-style: italic; color: rgba(255,255,255,0.85); }
+ .page-hero-title em { font-style: italic; color: rgba(255,255,255,0.45); }
  .page-hero-sub {
  font-size: 15px;
  font-weight: 300;
@@ -1155,183 +1146,121 @@
 
  /* ── VALUATION MODELS ── */
  .valuation-section { margin-top: 8px; }
- /* ══════════════════════════════════════════════════════════
-    RESEARCH CARD SYSTEM
-    Apple / SF Pro design language — minimal, editorial, precise
-    ══════════════════════════════════════════════════════════ */
-
- /* ── CARD SHELL ── */
  .valuation-card {
-   background: #fff;
-   border: 1px solid #d2d2d7;
-   border-radius: 12px;
-   overflow: hidden;
+ background: var(--white);
+ border: 1px solid var(--border-light);
+ border-radius: 8px;
+ overflow: hidden;
  }
-
- /* ── CARD HEADER ── */
  .valuation-card-header {
-   display: flex;
-   align-items: flex-start;
-   justify-content: space-between;
-   gap: 16px;
-   padding: 18px 20px 14px;
-   border-bottom: 1px solid #e5e5ea;
+ display: flex;
+ align-items: flex-start;
+ justify-content: space-between;
+ padding: 28px 28px 20px;
+ border-bottom: 1px solid var(--border-light);
+ background: #fafaf8;
  }
  .valuation-card-tag {
-   font-size: 10px;
-   font-weight: 500;
-   letter-spacing: 0.06em;
-   text-transform: uppercase;
-   color: #86868b;
-   margin-bottom: 5px;
+ font-size: 10px;
+ font-weight: 500;
+ letter-spacing: 0.1em;
+ text-transform: uppercase;
+ color: var(--teal);
+ margin-bottom: 8px;
  }
  .valuation-card-title {
-   font-family: var(--serif);
-   font-size: 18px;
-   font-weight: 500;
-   color: #1d1d1f;
-   line-height: 1.15;
-   margin-bottom: 3px;
-   letter-spacing: -0.01em;
+ font-family: var(--serif);
+ font-size: 22px;
+ font-weight: 500;
+ color: var(--text-dark);
+ line-height: 1.1;
+ margin-bottom: 4px;
  }
  .valuation-card-sub {
-   font-size: 11px;
-   font-weight: 400;
-   color: #86868b;
-   letter-spacing: 0;
+ font-size: 12px;
+ font-weight: 300;
+ color: var(--text-light);
+ letter-spacing: 0.02em;
  }
  .valuation-card-rating {
-   flex-shrink: 0;
-   padding: 3px 10px;
-   border-radius: 100px;
-   font-size: 10px;
-   font-weight: 500;
-   letter-spacing: 0.06em;
-   text-transform: uppercase;
-   margin-top: 3px;
-   white-space: nowrap;
+ padding: 6px 14px;
+ background: rgba(13,92,99,0.08);
+ border: 1px solid var(--teal);
+ border-radius: 3px;
+ font-size: 11px;
+ font-weight: 500;
+ letter-spacing: 0.1em;
+ color: var(--teal);
+ flex-shrink: 0;
  }
-
- /* ── METRICS STRIP ── */
- /* Four equal columns, no tile borders — clean row of numbers */
  .valuation-metrics {
-   display: grid;
-   grid-template-columns: repeat(4, 1fr);
-   border-bottom: 1px solid #e5e5ea;
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 1px;
+ background: var(--border-light);
+ border-bottom: 1px solid var(--border-light);
  }
  .val-metric {
-   padding: 14px 16px 12px;
-   display: flex;
-   flex-direction: column;
-   gap: 4px;
-   border-right: 1px solid #f2f2f7;
+ background: var(--white);
+ padding: 18px 20px;
+ display: flex;
+ flex-direction: column;
+ gap: 4px;
  }
- .val-metric:last-child { border-right: none; }
+ .val-metric.highlight { background: rgba(13,92,99,0.04); }
  .val-metric-label {
-   font-size: 10px;
-   font-weight: 400;
-   letter-spacing: 0.04em;
-   text-transform: uppercase;
-   color: #86868b;
+ font-size: 10px;
+ font-weight: 500;
+ letter-spacing: 0.1em;
+ text-transform: uppercase;
+ color: var(--text-light);
  }
  .val-metric-value {
-   font-size: 17px;
-   font-weight: 600;
-   color: #1d1d1f;
-   line-height: 1;
-   font-variant-numeric: tabular-nums;
-   letter-spacing: -0.015em;
+ font-family: var(--serif);
+ font-size: 20px;
+ font-weight: 500;
+ color: var(--text-dark);
+ line-height: 1;
  }
  .val-metric-upside {
-   font-size: 11px;
-   font-weight: 400;
-   color: #1d1d1f;
+ font-size: 11px;
+ font-weight: 500;
+ color: var(--teal);
  }
-
- /* ── ASSUMPTIONS TABLE ── */
- /* Simple two-column key/value rows — no borders between cols */
- div.valuation-assumptions {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   border-bottom: 1px solid #e5e5ea;
+ .valuation-assumptions {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 1px;
+ background: var(--border-light);
+ border-bottom: 1px solid var(--border-light);
  }
  .val-assumption {
-   background: #fff;
-   padding: 9px 20px;
-   display: flex;
-   justify-content: space-between;
-   align-items: baseline;
-   border-bottom: 1px solid #f5f5f7;
-   gap: 16px;
+ background: var(--white);
+ padding: 14px 20px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
  }
- .val-assumption:nth-last-child(-n+2) { border-bottom: none; }
  .val-assumption-label {
-   font-size: 11px;
-   font-weight: 400;
-   color: #86868b;
-   flex-shrink: 0;
+ font-size: 11px;
+ font-weight: 400;
+ color: var(--text-light);
+ letter-spacing: 0.02em;
  }
  .val-assumption-value {
-   font-size: 11px;
-   font-weight: 400;
-   color: #1d1d1f;
-   text-align: right;
-   font-variant-numeric: tabular-nums;
+ font-size: 12px;
+ font-weight: 500;
+ color: var(--text-dark);
+ text-align: right;
  }
-
- /* ── OPEN LINK STRIP ── */
- .card-open-link {
-   padding: 11px 20px;
-   border-top: 1px solid #e5e5ea;
- }
- .card-open-link a {
-   display: inline-flex;
-   align-items: center;
-   gap: 6px;
-   font-size: 12px;
-   font-weight: 500;
-   color: var(--teal);
-   text-decoration: none;
-   letter-spacing: 0;
-   transition: opacity 0.3s ease;
- }
- .card-open-link a:hover { opacity: 0.7; }
- .card-open-link a svg {
-   width: 12px; height: 12px;
-   stroke: var(--teal); fill: none;
-   stroke-width: 1.8; stroke-linecap: round;
-   transition: transform 0.4s var(--spring);
- }
- .card-open-link a:hover svg { transform: translateX(3px); }
-
- /* ── THESIS NOTE ── */
  .valuation-note {
-   padding: 12px 20px 13px;
-   font-size: 11.5px;
-   font-weight: 400;
-   color: #6e6e73;
-   line-height: 1.6;
-   background: #fbfbfd;
-   border-top: 1px solid #e5e5ea;
- }
-
- /* ── UPSIDE COLOURS ── */
- .val-metric-upside[style*="#1C8A4B"] { color: #1c8a4b !important; }
- .val-metric-upside[style*="#D0342C"] { color: #d0342c !important; }
-
- /* ── MOBILE ── */
- @media (max-width: 768px) {
-   .valuation-metrics { grid-template-columns: repeat(2, 1fr); }
-   .valuation-card-header { padding: 14px 16px 12px; }
-   div.valuation-assumptions { grid-template-columns: 1fr; }
-   .val-assumption:nth-last-child(-n+2) { border-bottom: 1px solid #f5f5f7; }
-   .val-assumption:last-child { border-bottom: none; }
-   .card-open-link { padding: 10px 16px; }
-   .valuation-note { padding: 10px 16px 12px; }
- }
- @media (max-width: 480px) {
-   .val-metric-value { font-size: 15px; }
-   .val-metric { padding: 11px 12px 10px; }
+ padding: 18px 28px;
+ font-size: 12.5px;
+ font-weight: 300;
+ color: var(--text-light);
+ line-height: 1.7;
+ background: #fafaf8;
+ border-top: 1px solid var(--border-light);
  }
 
 
@@ -1590,8 +1519,8 @@
  .research-header { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 28px; }
  .research-item { grid-template-columns: auto 1fr; gap: 12px; padding: 16px 16px; flex-wrap: wrap; }
  .research-type { display: none; }
- .research-sector-tag { font-size: 9px; padding: 2px 7px; }
- .research-item-title { font-size: 13px; }
+ /* OLD research-sector-tag - replaced below */ font-size: 9px; padding: 2px 7px; }
+ font-size: 13px; }
  .research-item-title span { font-size: 11px; }
 
  /* ABOUT STRIP */
@@ -1655,987 +1584,6 @@
  .about-stat-grid { grid-template-columns: 1fr 1fr; }
  .valuation-metrics { grid-template-columns: 1fr 1fr; }
  }
-
- /* ═══════════════════════════════════════════════════
-    APPLE DESIGN ENHANCEMENTS
-    Spring transitions, press feedback, materials, typography
-    ═══════════════════════════════════════════════════ */
-
- /* Smooth scroll — platform-native feel */
- html { scroll-behavior: smooth; }
-
- /* Spring-approximating easing — cubic-bezier that mimics critically damped spring */
- :root {
-   --spring: cubic-bezier(0.26, 1.0, 0.48, 1);      /* Apple-optimal: slight settle, no lag */
-   --spring-smooth: cubic-bezier(0.25, 1.0, 0.5, 1);  /* critically damped, Apple §4 */
-   --spring-duration: 0.4s;
- }
-
- /* ── BUTTONS — respond on pointer-down, not release ── */
- .btn-primary {
-   transition: background 0.4s var(--spring-smooth),
-               transform 0.4s var(--spring),
-               box-shadow 0.4s var(--spring-smooth) !important;
-   will-change: transform;
- }
- .btn-primary:hover {
-   transform: translateY(-2px) !important;
-   box-shadow: 0 8px 28px rgba(13,92,99,0.22) !important;
- }
- .btn-primary:active {
-   transform: scale(0.97) translateY(0) !important;
-   transition-duration: 0.1s !important;
-   box-shadow: none !important;
- }
-
- .btn-ghost {
-   transition: background var(--spring-duration) var(--spring-smooth),
-               border-color var(--spring-duration) var(--spring-smooth),
-               transform var(--spring-duration) var(--spring),
-               color var(--spring-duration) var(--spring-smooth) !important;
-   will-change: transform;
- }
- .btn-ghost:hover { transform: translateY(-2px) !important; }
- .btn-ghost:active {
-   transform: scale(0.97) !important;
-   transition-duration: 0.1s !important;
- }
-
- .nav-cta {
-   transition: background 0.4s var(--spring-smooth),
-               border-color 0.4s var(--spring-smooth),
-               transform 0.4s var(--spring) !important;
-   will-change: transform;
- }
- .nav-cta:hover { transform: translateY(-1px) !important; }
- .nav-cta:active {
-   transform: scale(0.96) !important;
-   transition-duration: 0.1s !important;
- }
-
- /* ── NAV — enhanced translucent material ── */
- nav.scrolled {
-   background: rgba(10,14,14,0.82) !important;
-   backdrop-filter: blur(24px) saturate(180%) !important;
-   -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
- }
-
- /* ── NAV LINKS — spring-like colour transition ── */
- .nav-links a {
-   transition: color var(--spring-duration) var(--spring-smooth),
-               opacity var(--spring-duration) var(--spring-smooth) !important;
-   position: relative;
- }
-
- /* ── COVERAGE CARDS — spring lift on hover ── */
- .coverage-card {
-   transition: background 0.4s var(--spring-smooth),
-               transform 0.4s var(--spring),
-               box-shadow 0.4s var(--spring-smooth) !important;
-   will-change: transform;
- }
- .coverage-card:hover {
-   background: #f0f7f8 !important;
-   transform: translateY(-2px) !important;
-   box-shadow: 0 6px 20px rgba(13,92,99,0.06) !important;
- }
- .coverage-card:active { transform: scale(0.99) !important; transition-duration: 0.12s !important; }
-
- /* ── RESEARCH ITEMS — spring feedback ── */
- .research-item {
-   transition: background 0.35s var(--spring-smooth),
-               transform 0.4s var(--spring) !important;
-   will-change: transform;
- }
- .research-item:hover {
-   background: #f5fafa !important;
-   transform: translateX(3px) !important;
- }
- .research-item:active { transform: scale(0.995) translateX(0) !important; transition-duration: 0.1s !important; }
-
- /* Research arrow — spring movement */
- .research-arrow {
-   transition: transform 0.4s var(--spring),
-               stroke 0.35s var(--spring-smooth) !important;
-   flex-shrink: 0;
- }
- .research-item:hover .research-arrow {
-   transform: translateX(4px) !important;
-   stroke: var(--teal) !important;
- }
-
- /* ── VALUATION CARDS — subtle spring on hover ── */
- .valuation-card {
-   transition: box-shadow 0.4s var(--spring-smooth),
-               transform 0.4s var(--spring) !important;
-   }
- .valuation-card:hover {
-   box-shadow: 0 4px 24px rgba(0,0,0,0.07) !important;
-   transform: translateY(-1px) !important;
- }
-
- /* ── OPEN REPORT / MODEL LINKS — spring arrow ── */
- a[style*="color:var(--teal)"] svg {
-   transition: transform var(--spring-duration) var(--spring) !important;
- }
- a[style*="color:var(--teal)"]:hover svg {
-   transform: translateX(4px) !important;
- }
-
- /* ── TYPOGRAPHY REFINEMENTS ── */
- /* Large headings: tighter tracking as per Apple typography guidelines */
- .hero-headline {
-   letter-spacing: -0.025em !important;
-   font-optical-sizing: auto;
- }
- .section-headline {
-   letter-spacing: -0.02em !important;
-   line-height: 1.08 !important;
-   font-optical-sizing: auto;
- }
- /* Body copy: comfortable leading */
- .hero-sub, .section-sub {
-   line-height: 1.72 !important;
-   letter-spacing: 0.002em !important;
- }
- /* Small labels: slightly positive tracking for legibility */
- .val-metric-label, .research-sector-tag, .section-eyebrow span,
- .valuation-card-tag, .footer-col-title, .hero-cred-label {
-   letter-spacing: 0.11em !important;
- }
-
- /* ── PAGE HERO TITLES ── */
- .page-hero-title {
-   letter-spacing: -0.02em !important;
-   line-height: 1.1 !important;
- }
-
- /* ── SMOOTH FOCUS RINGS — accessibility + Apple style ── */
- :focus-visible {
-   outline: 2px solid rgba(13,92,99,0.6);
-   outline-offset: 3px;
-   border-radius: 4px;
- }
-
- /* ── REDUCED MOTION — fade instead of spring/slide ── */
- @media (prefers-reduced-motion: reduce) {
-   *, *::before, *::after {
-     transition-duration: 0.01ms !important;
-     animation-duration: 0.01ms !important;
-   }
-   html { scroll-behavior: auto; }
-   .hero-headline, .hero-sub, .hero-actions, .hero-creds {
-     animation: none !important;
-     opacity: 1 !important;
-   }
- }
-
- /* ── REDUCED TRANSPARENCY — solid surfaces ── */
- @media (prefers-reduced-transparency: reduce) {
-   nav.scrolled {
-     background: rgba(10,14,14,0.97) !important;
-     backdrop-filter: none !important;
-   }
- }
-
-
- /* ── SCROLL ENTRANCE ANIMATIONS ── */
- .reveal {
-   opacity: 0;
-   transform: translateY(16px);
-   transition: opacity 0.5s var(--spring-smooth), transform 0.5s var(--spring);
- }
- .reveal.visible {
-   opacity: 1;
-   transform: translateY(0);
- }
- /* Stagger children inside a reveal-group */
- .reveal-group > * {
-   opacity: 0;
-   transform: translateY(14px);
-   transition: opacity 0.45s var(--spring-smooth), transform 0.5s var(--spring);
- }
- .reveal-group.visible > *:nth-child(1) { opacity:1; transform:none; transition-delay: 0s; }
- .reveal-group.visible > *:nth-child(2) { opacity:1; transform:none; transition-delay: 0.07s; }
- .reveal-group.visible > *:nth-child(3) { opacity:1; transform:none; transition-delay: 0.14s; }
- .reveal-group.visible > *:nth-child(4) { opacity:1; transform:none; transition-delay: 0.21s; }
- .reveal-group.visible > *:nth-child(5) { opacity:1; transform:none; transition-delay: 0.28s; }
- .reveal-group.visible > *:nth-child(6) { opacity:1; transform:none; transition-delay: 0.35s; }
- @media (prefers-reduced-motion: reduce) {
-   .reveal, .reveal-group > * { opacity:1 !important; transform:none !important; transition:none !important; }
- }
-
- /* ── NAV ACTIVE INDICATOR ── */
- .nav-links a { position: relative; }
- .nav-links a::after {
-   content: '';
-   position: absolute;
-   bottom: -4px;
-   left: 0; right: 0;
-   height: 1.5px;
-   background: var(--teal);
-   transform: scaleX(0);
-   transform-origin: center;
-   transition: transform 0.5s var(--spring);
- }
- .nav-links a.active::after,
- .nav-links a[aria-current="page"]::after { transform: scaleX(1); }
-
- /* ── PAGE TRANSITION ── */
- @keyframes pageFadeIn {
-   from { opacity: 0; transform: translateY(6px); }
-   to   { opacity: 1; transform: translateY(0); }
- }
- main {
-   animation: pageFadeIn 0.35s var(--spring-smooth) both;
- }
- @media (prefers-reduced-motion: reduce) {
-   main { animation: none; }
- }
-
- /* ── CTA PULSE ── */
- @keyframes ctaPulse {
-   0%, 100% { box-shadow: 0 0 0 0 rgba(13,92,99,0); }
-   50%       { box-shadow: 0 0 0 8px rgba(13,92,99,0.15); }
- }
- .btn-primary {
-   animation: ctaPulse 3s ease-in-out 2s infinite;
- }
- .btn-primary:hover, .btn-primary:active {
-   animation: none !important;
- }
- @media (prefers-reduced-motion: reduce) {
-   .btn-primary { animation: none; }
- }
-
- /* ── CHART PATH DRAW ANIMATION ── */
- .chart-line-path {
-   stroke-dasharray: 900;
-   stroke-dashoffset: 900;
-   animation: drawChart 1.2s var(--spring-smooth) 0.5s forwards;
- }
- .chart-area-path {
-   opacity: 0;
-   animation: fadeInArea 0.6s ease 2s forwards;
- }
- @keyframes drawChart {
-   to { stroke-dashoffset: 0; }
- }
- @keyframes fadeInArea {
-   to { opacity: 1; }
- }
- @media (prefers-reduced-motion: reduce) {
-   .chart-line-path { animation: none; stroke-dashoffset: 0; }
-   .chart-area-path { animation: none; opacity: 1; }
- }
-
-
- /* ═══════════════════════════════════════════════════
-    APPLE DESIGN — REMAINING PRINCIPLES
-    ═══════════════════════════════════════════════════ */
-
- /* 1. TOUCH-ACTION — improve mobile gesture recognition */
- /* Buttons/links: prevent scroll-conflict on tap */
- .btn-primary, .btn-ghost, .nav-cta, .research-item,
- .coverage-card, .valuation-card, .cf-submit {
-   touch-action: manipulation; /* removes 300ms delay, allows tap without zoom-conflict */
- }
-
- /* 2. OVERSCROLL / RUBBER-BAND — soft scroll boundary */
- html, body {
-   overscroll-behavior: none; /* prevents browser pull-to-refresh jank on mobile */
- }
- /* Sections that scroll internally get contained rubber-band */
- .research-full-list, .research-list {
-   overscroll-behavior: contain;
- }
-
- /* 3. MOTION BLUR on fast-moving elements */
- /* Cards lifting on hover: subtle blur encodes speed */
- .coverage-card:hover,
- .research-item:hover {
-   filter: blur(0px); /* base — transitions from this */
- }
- @keyframes liftBlur {
-   0%   { filter: blur(0.3px); }
-   100% { filter: blur(0px); }
- }
- .coverage-card:hover {
-   animation: liftBlur 0.25s var(--spring-smooth) forwards;
- }
-
- /* 4. VIBRANCY — legible text over translucent/blur surfaces */
- /* Nav links over blurred nav — slightly heavier weight + contrast */
- nav.scrolled .nav-links a {
-   color: rgba(255,255,255,0.82);
-   font-weight: 450;
-   letter-spacing: 0.05em;
- }
- nav.scrolled .nav-links a.active,
- nav.scrolled .nav-links a:hover {
-   color: rgba(255,255,255,1);
-   font-weight: 500;
- }
- /* Vibrancy on hero sub-text (over dark blurred bg) */
- .hero-sub {
-   text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-   font-weight: 320;
- }
- /* Footer text over teal-tinted translucent bg */
- footer .footer-tagline {
-   font-weight: 350;
-   letter-spacing: 0.01em;
- }
-
- /* 5. MATERIALIZE — blur surfaces arrive as real materials, not plain fades */
- /* Page hero dark band: scale + blur in together */
- .page-hero {
-   animation: materializeHero 0.4s var(--spring-smooth) both;
- }
- @keyframes materializeHero {
-   from {
-     opacity: 0;
-     backdrop-filter: blur(0px);
-     transform: scale(0.995);
-   }
-   to {
-     opacity: 1;
-     backdrop-filter: blur(0px);
-     transform: scale(1);
-   }
- }
-
- /* ── EXTRAS from deeper skill read ── */
-
- /* Spatial consistency: research arrow origin anchored to right edge */
- .research-arrow {
-   transform-origin: right center;
- }
-
- /* Hit area padding on small interactive targets (§10 — ~10px hysteresis) */
- .nav-links a {
-   padding: 6px 4px;
- }
- .research-arrow {
-   padding: 8px;
-   margin: -8px;
-   box-sizing: content-box;
- }
-
- /* Scroll edge effect — gradient mask where content meets sticky nav */
- /* Fade top of main content so it reads as sliding under the nav material */
- .hero::before {
-   content: '';
-   position: absolute;
-   top: 0; left: 0; right: 0;
-   height: 80px;
-   background: linear-gradient(to bottom, rgba(15,17,18,0.4), transparent);
-   pointer-events: none;
-   z-index: 1;
- }
-
- /* Dim cards slightly while page-transition is in progress */
- body.transitioning .valuation-card,
- body.transitioning .research-item {
-   opacity: 0.7;
-   transition: opacity 0.18s ease;
- }
-
- /* cf-submit button: active press feedback (pointer-down) */
- .cf-submit:active {
-   transform: scale(0.98) !important;
-   transition-duration: 0.08s !important;
- }
-
- @media (prefers-reduced-motion: reduce) {
-   .page-hero { animation: none; }
-   .coverage-card:hover { animation: none; filter: none; }
-   nav.scrolled .nav-links a { transition: none; }
- }
-
-
- /* ══════════════════════════════════════
-    MOBILE HAMBURGER MENU
-    ══════════════════════════════════════ */
- .nav-hamburger {
-   display: none;
-   flex-direction: column;
-   gap: 5px;
-   cursor: pointer;
-   padding: 8px;
-   margin: -8px;
-   background: none;
-   border: none;
-   touch-action: manipulation;
- }
- .nav-hamburger span {
-   display: block;
-   width: 22px;
-   height: 1.5px;
-   background: rgba(255,255,255,0.85);
-   border-radius: 2px;
-   transition: transform 0.3s var(--spring), opacity 0.2s ease, width 0.3s var(--spring);
-   transform-origin: center;
- }
- .nav-hamburger.open span:nth-child(1) {
-   transform: translateY(6.5px) rotate(45deg);
- }
- .nav-hamburger.open span:nth-child(2) {
-   opacity: 0;
-   width: 0;
- }
- .nav-hamburger.open span:nth-child(3) {
-   transform: translateY(-6.5px) rotate(-45deg);
- }
-
- /* Mobile nav drawer */
- .nav-drawer {
-   display: none;
-   position: fixed;
-   top: 56px;
-   left: 0; right: 0;
-   background: rgba(10,14,14,0.97);
-   backdrop-filter: blur(24px) saturate(180%);
-   -webkit-backdrop-filter: blur(24px) saturate(180%);
-   border-bottom: 1px solid rgba(13,92,99,0.2);
-   padding: 0;
-   z-index: 99;
-   transform: translateY(-8px);
-   opacity: 0;
-   pointer-events: none;
-   transition: transform 0.3s var(--spring), opacity 0.25s var(--spring-smooth);
- }
- .nav-drawer.open {
-   transform: translateY(0);
-   opacity: 1;
-   pointer-events: auto;
- }
- .nav-drawer ul {
-   list-style: none;
-   padding: 8px 0 16px;
-   margin: 0;
-   display: flex;
-   flex-direction: column;
- }
- .nav-drawer ul a {
-   display: block;
-   padding: 14px 24px;
-   font-size: 16px;
-   font-weight: 400;
-   color: rgba(255,255,255,0.85);
-   text-decoration: none;
-   letter-spacing: 0.02em;
-   transition: color 0.2s ease, background 0.2s ease;
-   border-bottom: 1px solid rgba(255,255,255,0.05);
- }
- .nav-drawer ul a:last-child { border-bottom: none; }
- .nav-drawer ul a:active { background: rgba(13,92,99,0.15); color: white; }
- .nav-drawer ul a.active { color: var(--teal); }
-
- @media (max-width: 768px) {
-   .nav-hamburger { display: flex; }
-   .nav-drawer { display: block; }
- }
- @media (prefers-reduced-motion: reduce) {
-   .nav-drawer { transition: none; }
-   .nav-hamburger span { transition: none; }
- }
-
- /* ══════════════════════════════════════
-    MOBILE OPTIMISATIONS
-    ══════════════════════════════════════ */
-
- /* Valuation assumptions: 1-col on small screens */
- @media (max-width: 480px) {
-   .valuation-assumptions { grid-template-columns: 1fr; }
-   .val-assumption { flex-direction: column; align-items: flex-start; gap: 4px; }
-   .val-assumption-value { font-weight: 500; color: var(--text-dark); }
-   .valuation-metrics { grid-template-columns: 1fr 1fr; }
-   .valuation-card-header { padding: 16px 16px 14px; }
-   .section-eyebrow { margin-bottom: 10px; }
-   .coverage-card { padding: 20px 16px; }
-   .about-stat-grid { grid-template-columns: 1fr 1fr; gap: 0; }
-   .about-stat { min-height: 80px; padding: 16px 14px; }
-   .about-stat-num { font-size: 18px; }
-   .research-item { padding: 14px 14px; }
-   .page-hero { padding: 88px 16px 40px; }
-   .research-page-body, .about-page-body, .contact-page-body { padding: 32px 16px; }
- }
-
- /* Disable heavy animations on low-power/mobile */
- @media (max-width: 768px) {
-   /* No lift animations on touch — they conflict with tap */
-   .coverage-card:hover,
-   .research-item:hover,
-   .valuation-card:hover {
-     transform: none !important;
-     box-shadow: none !important;
-   }
-   /* Keep :active press feedback — that's instant and intentional */
-   .coverage-card:active { transform: scale(0.98) !important; }
-   .research-item:active { transform: scale(0.99) !important; }
-   /* No CTA pulse on mobile — save battery */
-   .btn-primary { animation: none !important; }
-   /* No translateX on research items — not meaningful on touch */
-   .research-item:hover { transform: none !important; }
-   .research-item:hover .research-arrow { transform: none !important; }
-   /* Faster transitions on mobile */
-   :root { --spring-duration: 0.3s; }
- }
-
- /* Prevent text selection during fast taps */
- .coverage-card, .research-item, .valuation-card {
-   -webkit-user-select: none;
-   user-select: none;
- }
- /* But allow selection on text content */
- .about-long-bio, .valuation-note, .research-item-title {
-   -webkit-user-select: text;
-   user-select: text;
- }
-
-
- /* ══════════════════════════════════════
-    RESEARCH PAGE QUICK-NAV TABS
-    ══════════════════════════════════════ */
- .research-quicknav {
-   display: flex;
-   gap: 8px;
-   flex-wrap: wrap;
-   padding: 28px 0 36px;
-   border-bottom: 1px solid var(--border-light);
-   margin-bottom: 48px;
- }
- .research-tab {
-   display: inline-flex;
-   align-items: center;
-   gap: 8px;
-   padding: 10px 20px;
-   border: 1px solid var(--border-light);
-   border-radius: 100px;
-   font-size: 12.5px;
-   font-weight: 500;
-   color: var(--text-mid);
-   text-decoration: none;
-   background: var(--white);
-   letter-spacing: 0.02em;
-   transition: background 0.4s var(--spring-smooth), border-color 0.4s var(--spring-smooth), color 0.4s var(--spring-smooth), transform 0.4s var(--spring);
-   will-change: transform;
-   touch-action: manipulation;
-   cursor: pointer;
- }
- .research-tab:hover {
-   background: var(--teal-light);
-   border-color: var(--teal);
-   color: var(--teal);
-   transform: translateY(-1px);
- }
- .research-tab:active { transform: scale(0.97); transition-duration: 0.1s; }
- .research-tab svg {
-   width: 13px; height: 13px;
-   stroke: currentColor;
-   fill: none;
-   stroke-width: 1.8;
-   stroke-linecap: round;
-   flex-shrink: 0;
- }
- @media (max-width: 480px) {
-   .research-quicknav { gap: 6px; padding: 20px 0 28px; }
-   .research-tab { font-size: 11.5px; padding: 8px 14px; }
- }
-
- /* ── SECTION LABEL CHIPS ── distinguish company vs sector vs model */
- .section-type-chip {
-   display: inline-flex;
-   align-items: center;
-   gap: 5px;
-   font-size: 10px;
-   font-weight: 600;
-   letter-spacing: 0.1em;
-   text-transform: uppercase;
-   padding: 3px 10px;
-   border-radius: 100px;
-   margin-bottom: 6px;
- }
- .section-type-chip.company { background: rgba(13,92,99,0.08); color: var(--teal); }
- .section-type-chip.sector { background: rgba(90,60,200,0.08); color: #5a3cc8; }
- .section-type-chip.macro { background: rgba(180,100,0,0.08); color: #b46400; }
- .section-type-chip.primer { background: rgba(28,120,80,0.08); color: #1c7850; }
-
-
- /* ── RESEARCH HERO TABS (inside dark band) ── */
- .page-hero-tabs {
-   display: flex;
-   gap: 10px;
-   flex-wrap: wrap;
-   margin-top: 40px;
-   padding-top: 32px;
-   border-top: 1px solid rgba(255,255,255,0.1);
- }
- .page-hero-tab {
-   display: inline-flex;
-   align-items: center;
-   gap: 8px;
-   padding: 9px 18px;
-   border: 1px solid rgba(255,255,255,0.2);
-   border-radius: 100px;
-   font-size: 12px;
-   font-weight: 500;
-   color: rgba(255,255,255,0.75);
-   text-decoration: none;
-   background: rgba(255,255,255,0.05);
-   letter-spacing: 0.04em;
-   transition: background 0.4s var(--spring-smooth),
-               border-color 0.4s var(--spring-smooth),
-               color 0.4s var(--spring-smooth),
-               transform 0.4s var(--spring);
-   will-change: transform;
-   touch-action: manipulation;
-   cursor: pointer;
-   backdrop-filter: blur(8px);
-   -webkit-backdrop-filter: blur(8px);
- }
- .page-hero-tab:hover {
-   background: rgba(13,92,99,0.35);
-   border-color: rgba(13,92,99,0.7);
-   color: #fff;
-   transform: translateY(-2px);
- }
- .page-hero-tab:active {
-   transform: scale(0.97);
-   transition-duration: 0.1s;
- }
- .page-hero-tab svg {
-   width: 12px; height: 12px;
-   stroke: currentColor;
-   fill: none;
-   stroke-width: 1.8;
-   stroke-linecap: round;
-   flex-shrink: 0;
- }
- @media (max-width: 480px) {
-   .page-hero-tabs { gap: 7px; margin-top: 28px; padding-top: 24px; }
-   .page-hero-tab { font-size: 11px; padding: 8px 14px; }
- }
-
-
- /* ══════════════════════════════════════
-    APPLE TYPOGRAPHY SYSTEM
-    Matches apple.com weights, sizes, tracking
-    ══════════════════════════════════════ */
-
- /* All text inside cards uses the light page colour, not the dark hero colour */
- .research-page-body,
- .about-page-body,
- .contact-page-body {
-   color: #1d1d1f;
-   font-size: 14px;
-   line-height: 1.47;
-   font-weight: 400;
-   letter-spacing: 0;
- }
-
- /* Section eyebrow — like apple.com kicker lines */
- .section-eyebrow span {
-   font-size: 11px;
-   font-weight: 500;
-   letter-spacing: 0.08em;
-   text-transform: uppercase;
-   color: #86868b;
- }
-
- /* Section headline — Lora 500, tight tracking only at large sizes */
- .section-headline {
-   letter-spacing: -0.018em !important;
-   font-weight: 500 !important;
-   line-height: 1.1 !important;
- }
-
- /* Research item list — clean editorial rows */
- .research-item-title {
-   font-size: 14px;
-   font-weight: 500;
-   color: #1d1d1f;
-   letter-spacing: 0;
-   line-height: 1.4;
- }
- .research-item-title span {
-   display: block;
-   font-size: 11.5px;
-   font-weight: 400;
-   color: #86868b;
-   margin-top: 3px;
-   letter-spacing: 0;
- }
- .research-sector-tag {
-   font-size: 10px;
-   font-weight: 500;
-   letter-spacing: 0.06em;
-   padding: 2px 8px;
-   border-radius: 100px;
- }
-
- /* Coverage card titles */
- .coverage-title {
-   font-size: 15px;
-   font-weight: 500;
-   color: #1d1d1f;
-   letter-spacing: 0;
- }
- .coverage-desc {
-   font-size: 12px;
-   font-weight: 400;
-   color: #6e6e73;
-   line-height: 1.5;
-   letter-spacing: 0;
- }
-
- /* About stat numbers */
- .about-stat-num {
-   font-size: 20px !important;
-   font-weight: 600 !important;
-   letter-spacing: -0.01em;
-   color: var(--teal);
-   line-height: 1.2 !important;
- }
- .about-stat-label {
-   font-size: 11px;
-   font-weight: 400;
-   color: #86868b;
-   letter-spacing: 0.02em;
- }
-
- /* Footer typography */
- .footer-col-title {
-   font-size: 11px;
-   font-weight: 500;
-   letter-spacing: 0.06em;
-   text-transform: uppercase;
-   color: #86868b;
- }
- .footer-col a {
-   font-size: 13px;
-   font-weight: 400;
-   color: rgba(255,255,255,0.65);
- }
- .footer-col a:hover { color: rgba(255,255,255,0.9); }
-
- /* Valuation page sub-headings under section headers */
- .valuation-card-header p,
- .valuation-sub {
-   font-size: 13px;
-   font-weight: 400;
-   color: #6e6e73;
-   line-height: 1.5;
- }
-
- /* Nav links — Inter 400, not 500 */
- .nav-links a {
-   font-size: 13px !important;
-   font-weight: 400 !important;
-   letter-spacing: 0 !important;
- }
-
-
- /* ══════════════════════════════════════
-    HERO STATS GRID
-    ══════════════════════════════════════ */
- .hero-stats-grid {
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   gap: 1px;
-   background: rgba(255,255,255,0.08);
-   border: 1px solid rgba(255,255,255,0.08);
-   border-radius: 10px;
-   overflow: hidden;
-   margin-top: 32px;
- }
- .hero-stat {
-   background: rgba(255,255,255,0.04);
-   padding: 12px 14px;
-   display: flex;
-   flex-direction: column;
-   gap: 3px;
- }
- .hero-stat-num {
-   font-size: 16px;
-   font-weight: 600;
-   color: #fff;
-   letter-spacing: -0.01em;
-   line-height: 1;
- }
- .hero-stat-label {
-   font-size: 10px;
-   font-weight: 400;
-   color: rgba(255,255,255,0.45);
-   letter-spacing: 0.04em;
-   text-transform: uppercase;
- }
-
- /* ══════════════════════════════════════
-    RESEARCH SHOWCASE (hero right panel)
-    ══════════════════════════════════════ */
- .showcase-stack {
-   position: relative;
-   width: 100%;
-   max-width: 440px;
-   margin-left: auto;
- }
- .showcase-card {
-   background: rgba(255,255,255,0.05);
-   border: 1px solid rgba(255,255,255,0.1);
-   border-radius: 14px;
-   padding: 20px 22px;
-   display: none;
-   flex-direction: column;
-   gap: 14px;
-   animation: showcaseFadeIn 0.45s var(--spring-smooth) both;
- }
- .showcase-card.active { display: flex; }
- @keyframes showcaseFadeIn {
-   from { opacity: 0; transform: translateY(6px); }
-   to   { opacity: 1; transform: translateY(0); }
- }
- .showcase-card-type {
-   display: flex;
-   align-items: center;
-   gap: 7px;
-   font-size: 10px;
-   font-weight: 500;
-   letter-spacing: 0.08em;
-   text-transform: uppercase;
-   color: rgba(255,255,255,0.55);
- }
- .showcase-type-dot {
-   width: 6px; height: 6px;
-   border-radius: 50%;
-   flex-shrink: 0;
- }
- .showcase-card-title {
-   font-family: var(--serif);
-   font-size: 18px;
-   font-weight: 500;
-   color: #fff;
-   letter-spacing: -0.01em;
-   line-height: 1.2;
- }
- .showcase-card-sub {
-   font-size: 11px;
-   font-weight: 400;
-   color: rgba(255,255,255,0.45);
-   margin-top: -8px;
- }
- .showcase-metrics {
-   display: grid;
-   grid-template-columns: repeat(4, 1fr);
-   gap: 1px;
-   background: rgba(255,255,255,0.08);
-   border-radius: 8px;
-   overflow: hidden;
- }
- .showcase-metric {
-   background: rgba(255,255,255,0.03);
-   padding: 10px 10px 9px;
-   display: flex;
-   flex-direction: column;
-   gap: 4px;
- }
- .sm-label {
-   font-size: 9px;
-   font-weight: 400;
-   letter-spacing: 0.06em;
-   text-transform: uppercase;
-   color: rgba(255,255,255,0.4);
- }
- .sm-value {
-   font-size: 14px;
-   font-weight: 600;
-   color: #fff;
-   font-variant-numeric: tabular-nums;
-   letter-spacing: -0.01em;
- }
- .showcase-thesis {
-   font-size: 12px;
-   font-weight: 400;
-   color: rgba(255,255,255,0.6);
-   line-height: 1.6;
- }
- .showcase-link {
-   font-size: 11.5px;
-   font-weight: 500;
-   color: rgba(255,255,255,0.7);
-   text-decoration: none;
-   letter-spacing: 0.02em;
-   transition: color 0.3s ease;
- }
- .showcase-link:hover { color: #fff; }
- .showcase-dots {
-   display: flex;
-   gap: 6px;
-   justify-content: center;
-   margin-top: 16px;
- }
- .showcase-dot {
-   width: 6px; height: 6px;
-   border-radius: 50%;
-   border: none;
-   background: rgba(255,255,255,0.25);
-   cursor: pointer;
-   padding: 0;
-   transition: background 0.3s ease, transform 0.3s var(--spring);
-   touch-action: manipulation;
- }
- .showcase-dot.active {
-   background: #fff;
-   transform: scale(1.3);
- }
-
- /* ── MOBILE ── */
- @media (max-width: 768px) {
-   .hero-stats-grid { grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 24px; }
-   .hero-stat { padding: 10px 10px; }
-   .hero-stat-num { font-size: 13px; }
-   .showcase-stack { max-width: 100%; margin-top: 32px; }
-   .showcase-metrics { grid-template-columns: repeat(2, 1fr); }
- }
- @media (max-width: 480px) {
-   .hero-stats-grid { grid-template-columns: repeat(2, 1fr); }
-   .showcase-metrics { grid-template-columns: repeat(2, 1fr); }
- }
- @media (prefers-reduced-motion: reduce) {
-   .showcase-card { animation: none; }
- }
-
-
- @media (prefers-contrast: more) {
-   .valuation-card { border-color: #1d1d1f; }
-   .val-assumption-label { color: #3a3a3c; }
-   .research-sector-tag { border: 1px solid currentColor; }
-   nav { background: rgba(10,14,14,0.98) !important; }
-   .hero-cred-label { color: rgba(255,255,255,0.7); }
- }
-
-
- /* ── PERFORMANCE: content-visibility for off-screen sections ── */
- .coverage, .research-preview, .cta-band,
- #sector-reports, #dcf-models, #market-outlooks,
- #company-coverage {
-   content-visibility: auto;
-   contain-intrinsic-size: 0 600px;
- }
-
- /* ── Avoid layout thrash: explicit contain on cards ── */
- .valuation-card, .coverage-card, .research-item {
-   contain: layout style;
- }
-
- /* ── Font smoothing ── */
- * {
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
-   text-rendering: optimizeLegibility;
- }
-
 </style>
 </head>
 <body>
@@ -2647,20 +1595,11 @@
  <ul class="nav-links">
  <li><a href="/">Home</a></li>
  <li><a href="/research">Research</a></li>
+ <li><a href="/about">About</a></li>
  <li><a href="/contact">Contact</a></li>
  </ul>
  <a href="/contact" class="nav-cta">Get in Touch</a>
- <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
-   <span></span><span></span><span></span>
- </button>
 </nav>
-<div class="nav-drawer" id="nav-drawer" aria-hidden="true">
- <ul>
-   <li><a href="/">Home</a></li>
-   <li><a href="/research">Research</a></li>
-   <li><a href="/contact">Contact</a></li>
- </ul>
-</div>
 
 
 
@@ -2719,14 +1658,38 @@
  </div>
  </div>
 
- <!-- RIGHT: LINKEDIN -->
+ <!-- RIGHT: CONTEXT -->
  <div class="contact-note">
+ <h2 class="contact-note-title">What I'm open to discussing.</h2>
+ <p class="contact-note-body">I respond to all substantive inquiries related to research, markets, and collaborations. If you've read any of the coverage and want to push back on the thesis, I'm equally open to that.</p>
+ <div class="contact-areas">
+ <div class="contact-area-item">
+ <div class="contact-area-dot"></div>
+ <div class="contact-area-text">Coverage requests on specific Indian listed companies or sectors</div>
+ </div>
+ <div class="contact-area-item">
+ <div class="contact-area-dot"></div>
+ <div class="contact-area-text">Research collaboration or co-authorship proposals</div>
+ </div>
+ <div class="contact-area-item">
+ <div class="contact-area-dot"></div>
+ <div class="contact-area-text">Buy-side or sell-side research role inquiries</div>
+ </div>
+ <div class="contact-area-item">
+ <div class="contact-area-dot"></div>
+ <div class="contact-area-text">Discussions on Power & T&D, Defence & Aerospace, Banks & NBFCs, Capital Goods & Engineering, or Renewables</div>
+ </div>
+ <div class="contact-area-item">
+ <div class="contact-area-dot"></div>
+ <div class="contact-area-text">Feedback on published research or methodology</div>
+ </div>
+ </div>
  <div class="contact-linkedin">
  <div class="contact-info-icon" style="width:36px;height:36px;border-radius:6px;background:rgba(13,92,99,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
  <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--teal);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
  </div>
  <div>
- <div class="contact-info-label" style="font-size:10.5px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:3px;">Connect with me on LinkedIn</div>
+ <div class="contact-info-label" style="font-size:10.5px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:3px;">Also on LinkedIn</div>
  <a href="https://www.linkedin.com/in/jimit-shah-371524159/" target="_blank" rel="noopener noreferrer" style="font-size:13.5px;color:var(--teal);text-decoration:none;font-weight:400;">Jimit Shah</a>
  </div>
  </div>
@@ -2750,6 +1713,7 @@
  <ul>
  <li><a href="/">Home</a></li>
  <li><a href="/research">Research</a></li>
+ <li><a href="/about">About</a></li>
  <li><a href="/contact">Contact</a></li>
  </ul>
  </div>
@@ -2763,62 +1727,17 @@
  </div>
  </div>
  <div class="footer-bottom">
- <span class="footer-copy">© 2026 Avalon Investments.</span>
- 
+ <span class="footer-copy">© 2026 Avalon Investments. Jimit Shah.</span>
+ <p class="footer-disclaimer">For informational purposes only. Not investment advice. Please conduct your own due diligence before making any investment decisions.</p>
  </div>
  </div>
  </footer>
 <script>
- // ── NAV SCROLL ──
  window.addEventListener('scroll', () => {
    document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 30);
- }, { passive: true });
-
- // ── NAV ACTIVE STATE ── mark current page link
- (function() {
-   const path = window.location.pathname.replace(/\/+$/, '') || '/';
-   document.querySelectorAll('.nav-links a').forEach(a => {
-     const href = a.getAttribute('href').replace(/\/+$/, '') || '/';
-     if (href === path || (path === '/' && href === '/')) {
-       a.classList.add('active');
-       a.setAttribute('aria-current', 'page');
-     }
-   });
- })();
-
- // ── SCROLL-TRIGGERED REVEAL ──
- (function() {
-   const observer = new IntersectionObserver((entries) => {
-     entries.forEach(entry => {
-       if (entry.isIntersecting) {
-         entry.target.classList.add('visible');
-         observer.unobserve(entry.target);
-       }
-     });
-   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-
-   document.querySelectorAll('.reveal, .reveal-group').forEach(el => observer.observe(el));
- })();
-
- // ── PAGE TRANSITION — fade out on navigate ──
- document.querySelectorAll('a[href^="/"]').forEach(a => {
-   a.addEventListener('click', function(e) {
-     const href = this.getAttribute('href');
-     if (href && !href.includes('#') && href !== window.location.pathname) {
-       e.preventDefault();
-       document.body.style.transition = 'opacity 0.18s ease';
-       document.body.style.opacity = '0';
-       setTimeout(() => { window.location.href = href; }, 180);
-     }
-   });
  });
 
- window.addEventListener('pageshow', () => {
-   document.body.style.transition = 'opacity 0.3s ease';
-   document.body.style.opacity = '1';
- });
-
- // ── CONTACT FORM ──
+ // Contact form
  async function handleFormSubmit(e) {
    const btn = e.target;
    const form = btn.closest('.contact-form');
@@ -2850,220 +1769,6 @@
      alert('Network error. Please try again.');
    }
  }
-
- // ── VELOCITY HANDOFF UTILITY (Apple §5 & §6) ──
- // Used for any future gesture-to-spring handoffs
- function project(initialVelocity, decelerationRate = 0.998) {
-   return (initialVelocity / 1000) * decelerationRate / (1 - decelerationRate);
- }
-
- // ── POINTER-DOWN FEEDBACK + CAPTURE (§1, §2, §10) ──
- // setPointerCapture ensures tracking continues if pointer leaves element bounds
- document.querySelectorAll('.coverage-card, .research-item, .valuation-card').forEach(el => {
-   let velHistory = []; // velocity history for release handoff (§5)
-
-   el.addEventListener('pointerdown', (e) => {
-     el.setPointerCapture(e.pointerId); // §2 — 1:1 tracking, capture pointer
-     el.style.transform = 'scale(0.99)';
-     el.style.transition = 'transform 0.08s ease';
-     velHistory = [{ y: e.clientY, t: performance.now() }];
-   });
-
-   el.addEventListener('pointermove', (e) => {
-     if (!el.hasPointerCapture(e.pointerId)) return;
-     // track velocity history (last 4 samples) for momentum handoff (§5)
-     velHistory.push({ y: e.clientY, t: performance.now() });
-     if (velHistory.length > 4) velHistory.shift();
-   });
-
-   el.addEventListener('pointerup', (e) => {
-     el.style.transform = '';
-     el.style.transition = '';
-     velHistory = [];
-   });
-
-   el.addEventListener('pointercancel', () => {
-     el.style.transform = '';
-     el.style.transition = '';
-     velHistory = [];
-   });
- });
-
- // ── BODY TRANSITIONING CLASS ──
- document.querySelectorAll('a[href^="/"]').forEach(a => {
-   a.addEventListener('click', function() {
-     document.body.classList.add('transitioning');
-   });
- });
-
-
- // ── INTERRUPTIBLE SPRING (§3 — reads live transform value) ──
- // Pure CSS transitions snap to resting value when interrupted.
- // This reads the live on-screen position and starts from there.
- (function() {
-   // Spring simulation: critically damped, response ~0.35s
-   function springStep(pos, vel, target, stiffness, damping, dt) {
-     const force = -stiffness * (pos - target) - damping * vel;
-     const newVel = vel + force * dt;
-     const newPos = pos + newVel * dt;
-     return { pos: newPos, vel: newVel };
-   }
-
-   function animateSpring(el, targetY, targetX) {
-     // Cancel any running animation on this element
-     if (el._springRaf) cancelAnimationFrame(el._springRaf);
-
-     // Read live on-screen transform (current presentation value)
-     const matrix = new DOMMatrix(getComputedStyle(el).transform);
-     let pos = { x: matrix.m41 || 0, y: matrix.m42 || 0 };
-     let vel = el._springVel || { x: 0, y: 0 };
-
-     const stiffness = 180;
-     const damping = 22;
-     let last = performance.now();
-
-     function tick(now) {
-       const dt = Math.min((now - last) / 1000, 0.064); // cap dt at ~4 frames
-       last = now;
-
-       const sx = springStep(pos.x, vel.x, targetX, stiffness, damping, dt);
-       const sy = springStep(pos.y, vel.y, targetY, stiffness, damping, dt);
-       pos = { x: sx.pos, y: sy.pos };
-       vel = { x: sx.vel, y: sy.vel };
-
-       el.style.transform = `translate(${pos.x.toFixed(2)}px, ${pos.y.toFixed(2)}px)`;
-
-       // Settle check: close enough to stop
-       const settled = Math.abs(pos.x - targetX) < 0.05 && Math.abs(pos.y - targetY) < 0.05
-                     && Math.abs(vel.x) < 0.05 && Math.abs(vel.y) < 0.05;
-
-       if (settled) {
-         el.style.transform = targetX === 0 && targetY === 0 ? '' : `translate(${targetX}px, ${targetY}px)`;
-         el._springVel = { x: 0, y: 0 };
-         el._springRaf = null;
-       } else {
-         el._springVel = vel;
-         el._springRaf = requestAnimationFrame(tick);
-       }
-     }
-     el._springRaf = requestAnimationFrame(tick);
-   }
-
-   // Apply to cards — only on non-touch devices
-   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-     document.querySelectorAll('.coverage-card').forEach(el => {
-       el.addEventListener('mouseenter', () => animateSpring(el, -2, 0));
-       el.addEventListener('mouseleave', () => animateSpring(el, 0, 0));
-     });
-     document.querySelectorAll('.valuation-card').forEach(el => {
-       el.addEventListener('mouseenter', () => animateSpring(el, -1, 0));
-       el.addEventListener('mouseleave', () => animateSpring(el, 0, 0));
-     });
-     document.querySelectorAll('.research-item').forEach(el => {
-       el.addEventListener('mouseenter', () => animateSpring(el, 0, 3));
-       el.addEventListener('mouseleave', () => animateSpring(el, 0, 0));
-     });
-   }
- })();
-
- // ── MOBILE HAMBURGER MENU ──
- (function() {
-   const btn = document.getElementById('nav-hamburger');
-   const drawer = document.getElementById('nav-drawer');
-   if (!btn || !drawer) return;
-
-   function toggleMenu(open) {
-     btn.classList.toggle('open', open);
-     drawer.classList.toggle('open', open);
-     btn.setAttribute('aria-expanded', open);
-     drawer.setAttribute('aria-hidden', !open);
-     document.body.style.overflow = open ? 'hidden' : '';
-   }
-
-   btn.addEventListener('click', () => toggleMenu(!btn.classList.contains('open')));
-
-   // Close on link click
-   drawer.querySelectorAll('a').forEach(a => {
-     a.addEventListener('click', () => toggleMenu(false));
-   });
-
-   // Close on outside tap
-   document.addEventListener('pointerdown', (e) => {
-     if (btn.classList.contains('open') && !drawer.contains(e.target) && !btn.contains(e.target)) {
-       toggleMenu(false);
-     }
-   });
-
-   // Mark active link in drawer too
-   const path = window.location.pathname.replace(/\/+$/, '') || '/';
-   drawer.querySelectorAll('a').forEach(a => {
-     const href = a.getAttribute('href').replace(/\/+$/, '') || '/';
-     if (href === path) a.classList.add('active');
-   });
- })();
-
-
- // ── RESEARCH PAGE QUICK-NAV SMOOTH SCROLL ──
- document.querySelectorAll('.page-hero-tab').forEach(tab => {
-   tab.addEventListener('click', function(e) {
-     const href = this.getAttribute('href');
-     if (href && href.startsWith('#')) {
-       e.preventDefault();
-       const target = document.querySelector(href);
-       if (target) {
-         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-       }
-     }
-   });
- });
-
-
- // ── RESEARCH SHOWCASE ROTATION ──
- (function() {
-   const cards = document.querySelectorAll('.showcase-card');
-   const dots  = document.querySelectorAll('.showcase-dot');
-   if (!cards.length) return;
-
-   let current = 0;
-   let timer;
-
-   function show(idx) {
-     cards[current].classList.remove('active');
-     dots[current].classList.remove('active');
-     current = idx;
-     cards[current].classList.add('active');
-     dots[current].classList.add('active');
-   }
-
-   function next() { show((current + 1) % cards.length); }
-
-   function startTimer() {
-     clearInterval(timer);
-     // Only run when tab is visible — pause on hidden to save resources
-     if (!document.hidden) timer = setInterval(next, 5000);
-   }
-
-   dots.forEach(dot => {
-     dot.addEventListener('click', () => {
-       show(parseInt(dot.dataset.target));
-       startTimer();
-     });
-   });
-
-   const stack = document.getElementById('showcase-stack');
-   if (stack) {
-     stack.addEventListener('mouseenter', () => clearInterval(timer));
-     stack.addEventListener('mouseleave', startTimer);
-   }
-
-   // Pause when tab is hidden, resume when visible (saves battery/CPU)
-   document.addEventListener('visibilitychange', () => {
-     document.hidden ? clearInterval(timer) : startTimer();
-   });
-
-   startTimer();
- })();
-
 </script>
 </body>
 </html>
