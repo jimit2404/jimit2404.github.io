@@ -1157,7 +1157,12 @@
    background: #fff;
    border: 1px solid #d2d2d7;
    border-radius: 12px;
-   overflow: hidden;
+ }
+ .valuation-card > *:first-child {
+   border-radius: 11px 11px 0 0;
+ }
+ .valuation-card > *:last-child {
+   border-radius: 0 0 11px 11px;
  }
 
  /* ── CARD HEADER ── */
@@ -1273,15 +1278,17 @@
 
  /* ── OPEN LINK STRIP ── */
  .card-open-link {
-   padding: 11px 20px;
    border-top: 1px solid #e5e5ea;
    position: relative;
    z-index: 2;
  }
  .card-open-link a {
-   display: inline-flex;
+   display: flex;
    align-items: center;
    gap: 6px;
+   padding: 11px 20px;
+   width: 100%;
+   box-sizing: border-box;
    font-size: 12px;
    font-weight: 500;
    color: var(--teal);
@@ -1326,7 +1333,7 @@
    div.valuation-assumptions { grid-template-columns: 1fr; }
    .val-assumption:nth-last-child(-n+2) { border-bottom: 1px solid #f5f5f7; }
    .val-assumption:last-child { border-bottom: none; }
-   .card-open-link { padding: 10px 16px; }
+   .card-open-link a { padding: 10px 16px; }
    .valuation-note { padding: 10px 16px 12px; }
  }
  @media (max-width: 480px) {
@@ -1732,7 +1739,7 @@
    background: #f0f7f8 !important;
    box-shadow: 0 6px 20px rgba(13,92,99,0.08) !important;
  }
- .coverage-card:active { transform: scale(0.99) !important; transition-duration: 0.12s !important; }
+ .coverage-card:active { opacity: 0.85 !important; transition-duration: 0.12s !important; }
 
  /* ── RESEARCH ITEMS — spring feedback ── */
  .research-item {
@@ -2160,7 +2167,7 @@
      background: inherit !important;
    }
    /* Keep :active press feedback — that's instant and intentional */
-   .coverage-card:active { transform: scale(0.98) !important; }
+   .coverage-card:active { opacity: 0.85 !important; }
    /* No CTA pulse on mobile — save battery */
    .btn-primary { animation: none !important; }
    /* Faster transitions on mobile */
@@ -3355,13 +3362,6 @@
    }
  }
 
- // ── POINTER-DOWN FEEDBACK + CAPTURE (§1, §2, §10) ──
- // setPointerCapture ensures tracking continues if pointer leaves element bounds
- document.querySelectorAll('.coverage-card, .research-item, .valuation-card').forEach(el => {
-   el.addEventListener('pointerdown', (e) => {
-     el.setPointerCapture(e.pointerId);
-   });
- });
 
  // ── BODY TRANSITIONING CLASS ──
  document.querySelectorAll('a[href^="/"]').forEach(a => {
@@ -3373,6 +3373,28 @@
 
  // Spring animation removed from card elements — inline transform on cards
  // shifts the visual hit zone on desktop Chromium causing links to not register clicks.
+
+ // ── CARD LINK CLICK FORWARDER ──
+ // Belt-and-suspenders: if the user clicks the .card-open-link container
+ // but the browser fails to route to the child <a> (desktop Chromium hit-zone bug),
+ // open the link manually. The <a> itself still handles its own click normally.
+ document.querySelectorAll('.card-open-link').forEach(function(strip) {
+   strip.addEventListener('click', function(e) {
+     // Only act if the click did not already land on the <a> or inside it
+     var link = strip.querySelector('a');
+     if (link && !link.contains(e.target) && e.target !== link) {
+       var href = link.getAttribute('href');
+       var target = link.getAttribute('target');
+       if (href) {
+         if (target === '_blank') {
+           window.open(href, '_blank', 'noopener,noreferrer');
+         } else {
+           window.location.href = href;
+         }
+       }
+     }
+   });
+ });
 
  // ── MOBILE HAMBURGER MENU ──
  (function() {
